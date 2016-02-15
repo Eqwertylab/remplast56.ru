@@ -1,0 +1,40 @@
+{
+  "name": "remplast",
+  "description": "html template for site remplast56.ru",
+  "keywords": [
+    "css",
+    "js",
+    "less",
+    "mobile-first",
+    "responsive",
+    "front-end",
+    "html"
+  ],
+  "homepage": "http://remplast56.ru/",
+  "license": "MIT",
+  "moduleType": "globals",
+  "main": [
+    "src/index.html"
+  ],
+  "ignore": [
+    "/.*",
+    "_config.yml",
+    "CNAME",
+    "composer.json",
+    "CONTRIBUTING.md",
+    "docs",
+    "js/tests",
+    "test-infra"
+  ],
+  "dependencies": {
+    "jquery": ">= 1.9.1",
+    "swiper": "~3.2.7",
+    "jquery-smooth-scrolling": "~1.5.2"
+  },
+  "devDependencies": {
+    "bootstrap": "~3.3.6",
+    "jquery-validation": "~1.14.0",
+    "jquery-form": "~3.46.0",
+    "template7": "~1.1.0"
+  }
+}
