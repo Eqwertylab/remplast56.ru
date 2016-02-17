@@ -70,12 +70,26 @@ module.exports = function(grunt) {
     },
 
     watch: {
-
+      options: {
+        livereload: true
+      },
       theme: {
         files: 'src/less/**/*.less',
         tasks: 'less'
       }
+    },
+
+    express: {
+      site: {
+        options: {
+          port: 9001,
+          hostname: 'localhost',
+          bases: ['.'],
+          livereload: true
+        }
+      }
     }
+
   });
 
   grunt.loadNpmTasks('grunt-contrib-watch');
@@ -85,6 +99,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-usemin');
+  grunt.loadNpmTasks('grunt-express');
 
   grunt.registerTask('build', [
     'less',
@@ -94,6 +109,11 @@ module.exports = function(grunt) {
     'cssmin:generated',
     'uglify:generated',
     'usemin'
+  ]);
+
+  grunt.registerTask('server', [
+    'express',
+    'watch'
   ]);
 
 };

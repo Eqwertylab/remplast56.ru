@@ -2,7 +2,87 @@
 // Основное
 // --------------------------------------------------
 
-html
-{
+html {
   font-size: 75%;
+}
+
+body {
+  
+}
+
+//
+// Создатель кнопок с градиентом
+// --------------------------------------------------
+.button-variant-gradient(@btn-gr-color1:#5eba1f; @btn-gr-color2:#66c227; @color:#fff;) {
+
+  #gradient > .vertical(@btn-gr-color1, @btn-gr-color2);
+
+  &:focus,
+  &.focus {
+    color: @color;
+    #gradient > .vertical( darken(@btn-gr-color1, 2%), darken(@btn-gr-color2,2%));
+  }
+
+  &:hover {
+    color: @color;
+    #gradient > .vertical( darken(@btn-gr-color1, 2%), darken(@btn-gr-color2,2%));
+  }
+
+  &:active {
+    #gradient > .vertical( darken(@btn-gr-color1, 5%), darken(@btn-gr-color2,5%));
+
+    &:hover,
+    &:focus,
+    &.focus {
+      #gradient > .vertical( darken(@btn-gr-color1, 5%), darken(@btn-gr-color2,5%));
+    }
+  }
+}
+
+
+//
+// Заголовок
+// --------------------------------------------------
+.head {
+  
+  /* http://www.colorzilla.com/gradient-editor/#283d9f+0,1e4fb2+25,1e5fc3+50,1f6cd1+75,1f6dd3+100 */
+  background: #283d9f;
+  background: -moz-linear-gradient(top,  #283d9f 0%, #1e4fb2 25%, #1e5fc3 50%, #1f6cd1 75%, #1f6dd3 100%);
+  background: -webkit-linear-gradient(top,  #283d9f 0%,#1e4fb2 25%,#1e5fc3 50%,#1f6cd1 75%,#1f6dd3 100%);
+  background: linear-gradient(to bottom,  #283d9f 0%,#1e4fb2 25%,#1e5fc3 50%,#1f6cd1 75%,#1f6dd3 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#283d9f', endColorstr='#1f6dd3',GradientType=0 );
+
+  color: #fff;
+  padding-top: 25px;
+
+  &__logo {
+    display: block;
+    .size(142px,49px);
+    background-image: url(../img/logo.png);
+    background-size: 142px 49px;
+    background-repeat: no-repeat; 
+  }
+
+  &__tel {
+    font-weight: bold;
+    font-size: 1.87rem;
+    margin-top: 15px;
+  }
+
+  &__address {
+    font-size: 1.1rem;
+  }
+
+  &__call {
+    .button-size(8px; 13px; 16px; 16px; 4px);
+    .button-variant-gradient();
+    border: none;
+    margin-top: 20px;
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+
+  &__action {
+    text-align: right;
+  }
 }
