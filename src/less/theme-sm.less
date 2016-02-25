@@ -8,5 +8,46 @@
     font-size: 80%;
   }
 
-  
+
+
+  //
+  // Заголовок
+  // --------------------------------------------------
+  .head {
+    padding-top: 40px;
+    &__info {
+      float: right;
+      width: auto;
+    }
+    &__contacts {
+      float: left;
+    }
+    &__action {
+      float: left;
+      margin-left: 25px;
+    }
+    &__tel {
+      margin-top: -5px;
+      text-align: right;
+      span {
+        padding-left: 30px;
+        background-image: url(../img/tel.png);
+      }
+    }
+    &__address {
+      text-align: right;
+      span {
+        padding-left: 20px;
+        background-image: url(../img/address.png);
+      }
+    }
+    &__call {
+      margin-top: 0;
+      text-align: left;
+      padding-right: 70px;
+      &:before {
+        display: block;
+      }
+    }
+  }
 }

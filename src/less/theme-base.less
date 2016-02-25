@@ -11,7 +11,7 @@ body {
 }
 
 //
-// Создатель кнопок с градиентом
+// Создатель кнопок с вертикальным градиентом
 // --------------------------------------------------
 .button-variant-gradient(@btn-gr-color1:#5eba1f; @btn-gr-color2:#66c227; @color:#fff;) {
 
@@ -67,10 +67,22 @@ body {
     font-weight: bold;
     font-size: 1.87rem;
     margin-top: 15px;
+    span {
+      display: inline-block;
+      background-repeat: no-repeat;
+      background-size: 23px 23px;
+      background-position: left center;
+    }
   }
 
   &__address {
     font-size: 1.1rem;
+    span {
+      display: inline-block;
+      background-repeat: no-repeat;
+      background-size: 14px 14px;
+      background-position: left center;
+    }
   }
 
   &__call {
@@ -80,6 +92,22 @@ body {
     margin-top: 20px;
     font-weight: 500;
     text-transform: uppercase;
+    position: relative;
+    span {
+      position: relative;
+      z-index: 2;
+    }
+    &:before {
+      content: "";
+      display: none;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      .size(81px,75px);
+      background-image: url(../img/man-small.png);
+      background-repeat: no-repeat;
+      z-index: 1;
+    }
   }
 
   &__action {

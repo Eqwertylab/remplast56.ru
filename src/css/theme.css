@@ -24,8 +24,20 @@ html {
   font-size: 1.87rem;
   margin-top: 15px;
 }
+.head__tel span {
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-size: 23px 23px;
+  background-position: left center;
+}
 .head__address {
   font-size: 1.1rem;
+}
+.head__address span {
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-size: 14px 14px;
+  background-position: left center;
 }
 .head__call {
   padding: 8px 13px;
@@ -41,6 +53,7 @@ html {
   margin-top: 20px;
   font-weight: 500;
   text-transform: uppercase;
+  position: relative;
 }
 .head__call:focus,
 .head__call.focus {
@@ -75,12 +88,65 @@ html {
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff53a41b', endColorstr='#ff5bad23', GradientType=0);
 }
+.head__call span {
+  position: relative;
+  z-index: 2;
+}
+.head__call:before {
+  content: "";
+  display: none;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 81px;
+  height: 75px;
+  background-image: url(../img/man-small.png);
+  background-repeat: no-repeat;
+  z-index: 1;
+}
 .head__action {
   text-align: right;
 }
 @media (min-width: 768px) {
   html {
     font-size: 80%;
+  }
+  .head {
+    padding-top: 40px;
+  }
+  .head__info {
+    float: right;
+    width: auto;
+  }
+  .head__contacts {
+    float: left;
+  }
+  .head__action {
+    float: left;
+    margin-left: 25px;
+  }
+  .head__tel {
+    margin-top: -5px;
+    text-align: right;
+  }
+  .head__tel span {
+    padding-left: 30px;
+    background-image: url(../img/tel.png);
+  }
+  .head__address {
+    text-align: right;
+  }
+  .head__address span {
+    padding-left: 20px;
+    background-image: url(../img/address.png);
+  }
+  .head__call {
+    margin-top: 0;
+    text-align: left;
+    padding-right: 70px;
+  }
+  .head__call:before {
+    display: block;
   }
 }
 @media (min-width: 992px) {
