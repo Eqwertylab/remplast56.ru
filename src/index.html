@@ -25,7 +25,7 @@
   <body>
     
     <header class="head" id="head">
-      <div class="container">
+      <div class="container-fluid">
         <div class="row">
           <div class="col-sm-3">
             <a href="#" class="head__logo"></a>
@@ -46,11 +46,45 @@
             </div>
           </div>
         </div>
-        <div class="clearfix">
-          <button class="navi__toggle">
-            
-            меню
-          </button>
+        <div class="navi">
+          <button class="navi__toggle visible-xs">Меню</button>    
+          <div class="navi__row">
+            <div class="navi__col navi__col_menu">
+              <div class="menu">
+                <li class="active"><a href="">Главная</a></li>
+                <li><a href="">О компании</a></li>
+                <li>
+                  <a href="">Услуги</a>
+                  <ul class="menu__inner">
+                    <li><a href="">Ремонтные работы</a></li>
+                    <li><a href="">Замена стеклопакетов</a></li>
+                    <li><a href="">Фурнитура</a></li>
+                    <li><a href="">Москитные сетки</a></li>
+                    <li><a href="">Жалюзи</a></li>
+                  </ul>
+                </li>
+                <li><a href="">Цены</a></li>
+                <li><a href="">Гостевая книга</a></li>
+                <li><a href="">Акции</a></li>
+                <li><a href="">Контакты</a></li>
+              </div>
+            </div>
+            <div class="navi__col navi__col_search">
+              <div class="search" id="search">
+                <form class="search__form">
+                  <button type="submit" class="search__submit">
+                    <i class="search__icon"></i>
+                  </button>
+                  <div class="search__input">
+                    <input type="text" name="string" id="search-input">
+                  </div>
+                </form>
+                <button class="search__toggle hidden-xs" id="search-toggle">
+                  <i class="search__icon"></i>
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </header>
@@ -62,6 +96,7 @@
     <script src="../bower_components/jquery-form/jquery.form.js"></script>
     <script src="../bower_components/template7/dist/template7.js"></script>
     <script src="../bower_components/jquery-smooth-scrolling/jquery.smoothscroll.js"></script>
+    <script src="js/search.js"></script>
     <script src="js/form.js"></script>
     <script src="js/scroll.js"></script>
     <!-- endbuild -->
