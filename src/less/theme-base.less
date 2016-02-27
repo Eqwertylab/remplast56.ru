@@ -6,14 +6,17 @@ html {
   font-size: 75%;
 }
 
-body {
-  
+.container-fluid {
+  max-width: 1500px;
 }
 
 //
 // Создатель кнопок с вертикальным градиентом
 // --------------------------------------------------
-.button-variant-gradient(@btn-gr-color1:#5eba1f; @btn-gr-color2:#66c227; @color:#fff;) {
+@active-gr-color1: #5eba1f;
+@active-gr-color2: #66c227;
+
+.button-variant-gradient(@btn-gr-color1:@active-gr-color1; @btn-gr-color2:@active-gr-color2; @color:#fff;) {
 
   #gradient > .vertical(@btn-gr-color1, @btn-gr-color2);
 
@@ -53,7 +56,7 @@ body {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#283d9f', endColorstr='#1f6dd3',GradientType=0 );
 
   color: #fff;
-  padding-top: 25px;
+  padding: 25px 0 8px;
 
   &__logo {
     display: block;
@@ -66,6 +69,7 @@ body {
   &__tel {
     font-weight: bold;
     font-size: 1.87rem;
+    line-height: 1.27;
     margin-top: 15px;
     span {
       display: inline-block;
@@ -112,5 +116,228 @@ body {
 
   &__action {
     text-align: right;
+  }
+
+
+
+  /* Баннер на лендинге */
+  &__slide {
+    margin-bottom: -8px;  
+    height: 310px;  
+  }
+  &__title {
+    font-size: 2.25rem;
+    font-weight: 700;
+    line-height: 1.1;
+    text-align: center;
+    padding-top: 25px;  
+  }
+  &__image {
+    position: absolute;
+    background-image: url(../img/window.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+  }
+}
+
+
+
+//
+// Блок навигации
+// --------------------------------------------------
+
+.navi {
+  .clearfix();
+  margin-top: 24px;
+  color: @navi-color;
+  &__toggle {
+    height: @navi-height;
+    text-transform: uppercase;
+    font-size: 15px;
+    line-height: 1;
+    padding: 11px 14px;
+    border: none;
+    font-weight: 500;
+    border-radius: 4px;
+    outline: none;
+    float: left;
+    margin-right: 3px;
+    #gradient > .vertical(@navi-grad-color1, @navi-grad-color2);
+    &:focus {
+      background: @navi-hover-bg;
+    }
+
+    &:hover {
+      background: @navi-hover-bg;
+    }
+
+    &:active {
+      #gradient > .vertical(@navi-grad-color2, @navi-grad-color1);
+
+      &:hover,
+      &:focus {
+        #gradient > .vertical(@navi-grad-color2, @navi-grad-color1);
+      }
+    }
+
+    &:before {
+      content: "";
+      display: inline-block;
+      .size(10px,10px);
+      background-image: url(../img/menu.png);
+      background-size: 10px 10px;
+      background-repeat: no-repeat;
+      margin-right: 7px;
+    }
+  }
+  &__row {
+    overflow: hidden;
+  }
+  &__col {
+    vertical-align: top;
+    &_menu {
+      display: none;
+      padding-right: 3px;
+    }
+  }
+}
+
+
+
+//
+// Главное меню
+// --------------------------------------------------
+
+.menu {
+  margin: 0;
+  padding: 0;
+  display: table;
+  border-radius: 4px;
+  #gradient > .vertical(@navi-grad-color1, @navi-grad-color2);
+  width: 100%;
+  li {
+    list-style-type: none;
+    position: relative;
+  }
+  a {
+    color: @navi-color;
+    display: block;
+    padding: 11px 12px;
+    text-decoration: none;
+    height: @navi-height;
+    line-height: 1;
+    white-space: nowrap;
+  }
+  .active a {
+    #gradient > .vertical( @active-gr-color1, @active-gr-color2);
+    color: #ffffff;
+    &:hover,
+    &:focus,
+    &.focus {
+      #gradient > .vertical( @active-gr-color1, @active-gr-color2);
+    }
+  }
+  > li {
+    display: table-cell;
+    > a {
+      text-transform: uppercase;
+      text-align: center;
+    }
+    &:first-child > a {
+      border-radius: 4px 0 0 4px;
+    }
+    &:last-child > a {
+      border-radius: 0 4px 4px 0;
+    }
+    &:hover > a {
+      background: @navi-hover-bg;
+      + .menu__inner {
+        display: block;
+      }
+    }
+  }
+
+  &__inner {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    display: none;
+    top: 100%;
+    left: 0;
+    background: @navi-hover-bg;
+    border-radius: 0 0 4px 4px;
+    > li {
+      > a {
+        &:hover {
+          background: darken(@navi-hover-bg, 5%);
+        }
+      }
+      &:last-child > a {
+        border-radius: 0 0 4px 4px;
+      }
+    }
+  }
+}
+
+
+
+//
+// Форма поиска
+// --------------------------------------------------
+.search {
+  position: relative;
+  &__icon {
+    display: inline-block;
+    background-image: url(../img/search.png);
+    background-repeat: no-repeat;
+    background-size: 16px 15px;
+    .size(16px,15px);
+  }
+  &__toggle,
+  &__submit {
+    outline: none;
+    height: @navi-height;
+    float: right;
+    border: none;
+    padding: 11px 14px;
+    border-radius: 0 4px 4px 0;
+    #gradient > .vertical(@navi-grad-color1, @navi-grad-color2);
+
+    &:focus {
+      background: #e3e7ed;
+    }
+
+    &:hover {
+      background: #e3e7ed;
+    }
+
+    &:active {
+      #gradient > .vertical(@navi-grad-color2, @navi-grad-color1);
+
+      &:hover,
+      &:focus {
+        #gradient > .vertical(@navi-grad-color2, @navi-grad-color1);
+      }
+    }
+  }
+  &__input {
+    overflow: hidden;
+
+    input {
+      border-radius: 4px 0 0 4px;
+      font-size: 20px;
+      outline: none;
+      border: none;
+      width: 100%;
+      height: @navi-height;
+      padding: 11px 14px;
+      #gradient > .vertical(@navi-grad-color1, @navi-grad-color2);
+    }
+  }
+  &__toggle {
+    border-radius: 4px;
+    padding: 11px 12px;
+    float: none;
   }
 }
