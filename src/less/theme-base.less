@@ -7,7 +7,7 @@ html {
 }
 
 .container-fluid {
-  max-width: 1500px;
+  max-width: @screen-xlg-min;
 }
 
 //
@@ -57,6 +57,7 @@ html {
 
   color: #fff;
   padding: 25px 0 8px;
+  overflow: hidden;
 
   &__logo {
     display: block;
@@ -123,9 +124,12 @@ html {
   /* Баннер на лендинге */
   &__slide {
     margin-bottom: -8px;  
-    height: 310px;  
+    height: 310px;
+    position:relative;  
   }
   &__title {
+    position: relative;
+    z-index: 2;
     font-size: 2.25rem;
     font-weight: 700;
     line-height: 1.1;
@@ -134,10 +138,15 @@ html {
   }
   &__image {
     position: absolute;
+    z-index: 1;
+    left: 50%;
+    bottom: 0; 
+    margin-left: -140px;
+    .size(280px, 172px);
     background-image: url(../img/window.png);
+    background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
-    background-position: center;
   }
 }
 
@@ -340,4 +349,113 @@ html {
     padding: 11px 12px;
     float: none;
   }
+}
+
+
+
+//
+// Услуги
+// --------------------------------------------------
+.service {
+  margin: 0 -10px;
+  padding: 0;
+  &__item {
+    display: inline-block;
+    vertical-align: top;
+    width: 235px;
+    padding: 0 10px;
+    list-style-type: none;
+    margin-bottom: 45px;
+    // height: 250px;
+  }
+  &__image {
+    height: 140px;
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    &_wind {
+      background-image: url(../img/wind-open.png);
+      background-size: 90px 139px;
+    }
+    &_acce {
+      background-image: url(../img/accessories.png);
+      background-size: 133px 151px;
+    }
+    &_uplo {
+      background-image: url(../img/uplotnit.png);
+      background-size: 137px 110px;
+    }
+    &_bug {
+      background-image: url(../img/bug.png);
+      background-size: 98px 157px;
+    }
+    &_pen {
+      background-image: url(../img/pen.png);
+      background-size: 51px 114px;
+    }
+    &_ogra {
+      background-image: url(../img/ogranichtel.png);
+      background-size: 139px 51px;
+      background-position: left center;
+    }
+    &_mesh {
+      background-image: url(../img/mesh.png);
+      background-size: 62px 130px;
+    }
+    &_blin {
+      background-image: url(../img/blinds.png);
+      background-size: 65px 130px;
+    }
+  }
+  &__title {
+    margin-top: 8px;
+    font-size: 15px;
+  }
+  &__price {
+    margin-top: 8px;
+    font-style: italic;
+    font-size: 13px;
+    color: #a4a6ae;
+  }
+}
+
+
+
+//
+// Контент
+// --------------------------------------------------
+.content {
+  padding-top: 3.125rem;
+
+  /* Ссылки */
+  a {
+    text-decoration: none;
+    border-bottom: 1px solid #bec5e2;
+    &:active,
+    &:hover {
+      color: #0e2485;
+      border-color: #8691c2;
+    }
+    &:visited {
+      color: #b40eb4;
+      border-color: #e8b6e8;
+    }
+  }
+  
+  /* Заголовки */
+  h1 {
+    margin: 0 0 3.125rem;
+    font-size: 3.25rem;
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  &_landing {
+    padding-top: 4.0625rem;
+    h1 {
+      font-size: 2.625rem;
+      font-weight: 500;
+      margin: 0 0 2.0625rem;
+    }
+  }
+
 }

@@ -13,6 +13,7 @@ html {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#283d9f', endColorstr='#1f6dd3', GradientType=0);
   color: #fff;
   padding: 25px 0 8px;
+  overflow: hidden;
   /* Баннер на лендинге */
 }
 .head__logo {
@@ -115,8 +116,11 @@ html {
 .head__slide {
   margin-bottom: -8px;
   height: 310px;
+  position: relative;
 }
 .head__title {
+  position: relative;
+  z-index: 2;
   font-size: 2.25rem;
   font-weight: 700;
   line-height: 1.1;
@@ -125,10 +129,16 @@ html {
 }
 .head__image {
   position: absolute;
+  z-index: 1;
+  left: 50%;
+  bottom: 0;
+  margin-left: -140px;
+  width: 280px;
+  height: 172px;
   background-image: url(../img/window.png);
+  background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
-  background-position: center;
 }
 .navi {
   margin-top: 24px;
@@ -351,6 +361,98 @@ html {
   padding: 11px 12px;
   float: none;
 }
+.service {
+  margin: 0 -10px;
+  padding: 0;
+}
+.service__item {
+  display: inline-block;
+  vertical-align: top;
+  width: 235px;
+  padding: 0 10px;
+  list-style-type: none;
+  margin-bottom: 45px;
+}
+.service__image {
+  height: 140px;
+  background-repeat: no-repeat;
+  background-position: left bottom;
+}
+.service__image_wind {
+  background-image: url(../img/wind-open.png);
+  background-size: 90px 139px;
+}
+.service__image_acce {
+  background-image: url(../img/accessories.png);
+  background-size: 133px 151px;
+}
+.service__image_uplo {
+  background-image: url(../img/uplotnit.png);
+  background-size: 137px 110px;
+}
+.service__image_bug {
+  background-image: url(../img/bug.png);
+  background-size: 98px 157px;
+}
+.service__image_pen {
+  background-image: url(../img/pen.png);
+  background-size: 51px 114px;
+}
+.service__image_ogra {
+  background-image: url(../img/ogranichtel.png);
+  background-size: 139px 51px;
+  background-position: left center;
+}
+.service__image_mesh {
+  background-image: url(../img/mesh.png);
+  background-size: 62px 130px;
+}
+.service__image_blin {
+  background-image: url(../img/blinds.png);
+  background-size: 65px 130px;
+}
+.service__title {
+  margin-top: 8px;
+  font-size: 15px;
+}
+.service__price {
+  margin-top: 8px;
+  font-style: italic;
+  font-size: 13px;
+  color: #a4a6ae;
+}
+.content {
+  padding-top: 3.125rem;
+  /* Ссылки */
+  /* Заголовки */
+}
+.content a {
+  text-decoration: none;
+  border-bottom: 1px solid #bec5e2;
+}
+.content a:active,
+.content a:hover {
+  color: #0e2485;
+  border-color: #8691c2;
+}
+.content a:visited {
+  color: #b40eb4;
+  border-color: #e8b6e8;
+}
+.content h1 {
+  margin: 0 0 3.125rem;
+  font-size: 3.25rem;
+  font-weight: 700;
+  line-height: 1;
+}
+.content_landing {
+  padding-top: 4.0625rem;
+}
+.content_landing h1 {
+  font-size: 2.625rem;
+  font-weight: 500;
+  margin: 0 0 2.0625rem;
+}
 @media (min-width: 768px) {
   html {
     font-size: 80%;
@@ -406,9 +508,16 @@ html {
   .head__title {
     display: inline-block;
     vertical-align: middle;
-    font-size: 3.25rem;
+    font-size: 3.5rem;
     text-align: left;
     padding-top: 0;
+  }
+  .head__image {
+    left: auto;
+    right: -250px;
+    margin-left: 0px;
+    width: 725px;
+    height: 445px;
   }
   .navi__row {
     float: none;
@@ -470,13 +579,18 @@ html {
     font-size: 90%;
   }
   .container-fluid {
-    padding: 0 5%;
+    padding: 0 4%;
   }
   .head {
     /* Баннер на лендинге */
   }
   .head__slide {
     height: 515px;
+  }
+  .head__image {
+    width: 788px;
+    height: 484px;
+    right: -200px;
   }
   .menu > li > a {
     font-weight: 500;
@@ -485,12 +599,30 @@ html {
     font-size: 15px;
     padding: 11px 20px;
   }
+  .service__item {
+    width: 225px;
+  }
 }
 @media (min-width: 1200px) {
   html {
     font-size: 100%;
   }
+  .head {
+    /* Баннер на лендинге */
+  }
+  .head__image {
+    right: -80px;
+  }
   .menu a {
     padding: 11px 35px;
+  }
+}
+/* Максимальная ширина контейнера */
+@media (min-width: 1500px) {
+  .head {
+    /* Баннер на лендинге */
+  }
+  .head__image {
+    right: -12px;
   }
 }
