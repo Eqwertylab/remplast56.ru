@@ -362,14 +362,9 @@ html {
   float: none;
 }
 .service {
-  margin: 0 -10px;
   padding: 0;
 }
 .service__item {
-  display: inline-block;
-  vertical-align: top;
-  width: 235px;
-  padding: 0 10px;
   list-style-type: none;
   margin-bottom: 45px;
 }
@@ -447,11 +442,166 @@ html {
 }
 .content_landing {
   padding-top: 4.0625rem;
+  background: #e5e9ee;
 }
 .content_landing h1 {
   font-size: 2.625rem;
   font-weight: 500;
   margin: 0 0 2.0625rem;
+}
+.pancall {
+  background: #1f6dd3;
+  color: #fff;
+  padding: 190px 15px 15px;
+  border-radius: 4px;
+  text-align: center;
+  max-width: 450px;
+  margin: auto;
+  position: relative;
+}
+.pancall__header {
+  font-weight: 500;
+  font-size: 1.625rem;
+}
+.pancall__logo {
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  margin-left: -75px;
+  width: 150px;
+  height: 150px;
+  border-radius: 100%;
+  background-image: url(../img/manfull.png);
+  background-position: -11px 14px;
+  background-size: 130%;
+  background-color: #fff;
+  background-repeat: no-repeat;
+}
+.pancall__footer {
+  margin-top: 15px;
+}
+.pancall__btn {
+  padding: 8px 13px;
+  font-size: 16px;
+  line-height: 16px;
+  border-radius: 4px;
+  background-image: -webkit-linear-gradient(top, #5eba1f 0%, #66c227 100%);
+  background-image: -o-linear-gradient(top, #5eba1f 0%, #66c227 100%);
+  background-image: linear-gradient(to bottom, #5eba1f 0%, #66c227 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff5eba1f', endColorstr='#ff66c227', GradientType=0);
+  border: none;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+.pancall__btn:focus,
+.pancall__btn.focus {
+  color: #ffffff;
+  background-image: -webkit-linear-gradient(top, #5ab11e 0%, #62ba25 100%);
+  background-image: -o-linear-gradient(top, #5ab11e 0%, #62ba25 100%);
+  background-image: linear-gradient(to bottom, #5ab11e 0%, #62ba25 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff5ab11e', endColorstr='#ff62ba25', GradientType=0);
+}
+.pancall__btn:hover {
+  color: #ffffff;
+  background-image: -webkit-linear-gradient(top, #5ab11e 0%, #62ba25 100%);
+  background-image: -o-linear-gradient(top, #5ab11e 0%, #62ba25 100%);
+  background-image: linear-gradient(to bottom, #5ab11e 0%, #62ba25 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff5ab11e', endColorstr='#ff62ba25', GradientType=0);
+}
+.pancall__btn:active {
+  background-image: -webkit-linear-gradient(top, #53a41b 0%, #5bad23 100%);
+  background-image: -o-linear-gradient(top, #53a41b 0%, #5bad23 100%);
+  background-image: linear-gradient(to bottom, #53a41b 0%, #5bad23 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff53a41b', endColorstr='#ff5bad23', GradientType=0);
+}
+.pancall__btn:active:hover,
+.pancall__btn:active:focus,
+.pancall__btn:active.focus {
+  background-image: -webkit-linear-gradient(top, #53a41b 0%, #5bad23 100%);
+  background-image: -o-linear-gradient(top, #53a41b 0%, #5bad23 100%);
+  background-image: linear-gradient(to bottom, #53a41b 0%, #5bad23 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff53a41b', endColorstr='#ff5bad23', GradientType=0);
+}
+.introtext {
+  margin-top: 48px;
+}
+.features {
+  margin: 0;
+  padding: 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1;
+}
+.features__item {
+  background: #eff1f5;
+  list-style-type: none;
+  display: inline-block;
+  padding: 20px 25px;
+  vertical-align: top;
+  margin-right: 30px;
+  margin-bottom: 20px;
+}
+.features big {
+  font-size: 2.125rem;
+  line-height: 1.1;
+}
+.brands {
+  margin: 0;
+  padding: 0;
+}
+.brands__item {
+  display: inline-block;
+  list-style-type: none;
+  vertical-align: middle;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-bottom: 15px;
+  margin-right: 15px;
+  margin-right: 4%;
+}
+.brands__item:last-child {
+  margin-right: 0;
+}
+.brands__item_shuc {
+  background-image: url(../img/schuco.png);
+  width: 125px;
+  height: 22px;
+}
+.brands__item_geal {
+  background-image: url(../img/gealan.png);
+  width: 105px;
+  height: 26px;
+}
+.brands__item_veka {
+  background-image: url(../img/veka.png);
+  width: 60px;
+  height: 66px;
+}
+.brands__item_plas {
+  background-image: url(../img/plastmo.png);
+  width: 97px;
+  height: 25px;
+}
+.brands__item_reha {
+  background-image: url(../img/rehau.png);
+  width: 95px;
+  height: 43px;
+}
+.brands__item_plaf {
+  background-image: url(../img/plafen.png);
+  width: 98px;
+  height: 39px;
+}
+.brands__item_kbe {
+  background-image: url(../img/kbe.png);
+  width: 90px;
+  height: 38px;
 }
 @media (min-width: 768px) {
   html {
@@ -558,20 +708,41 @@ html {
   .navi__col_search {
     width: 40px;
   }
-  .search__form {
-    display: none;
-    position: absolute;
-    width: 450px;
-    right: -20px;
-    top: -50%;
+  .pancall {
+    max-width: 100%;
+    text-align: left;
+    padding: 20px;
+    margin-top: 60px;
   }
-  .search_active .search__form {
-    display: block;
-    box-shadow: 0 -2px 30px rgba(39, 62, 160, 0.65);
-    border-radius: 4px;
+  .pancall__header {
+    margin-top: 0;
   }
-  .search_active .search__toggle .search__icon {
-    visibility: hidden;
+  .pancall__logo {
+    width: 236px;
+    height: 219px;
+    top: auto;
+    left: 20px;
+    bottom: 0;
+    margin-left: 0;
+    background-size: 236px, 219px;
+    background-position: center;
+    background-color: transparent;
+    border-radius: 0;
+  }
+  .pancall__body {
+    padding-left: 256px;
+  }
+  .features {
+    display: table;
+    margin-bottom: 35px;
+  }
+  .features__item {
+    margin: 0px;
+    display: table-cell;
+    border-right: 30px solid #e5e9ee;
+  }
+  .features__item:last-child {
+    border-right: 0px;
   }
 }
 @media (min-width: 992px) {
@@ -599,9 +770,6 @@ html {
     font-size: 15px;
     padding: 11px 20px;
   }
-  .service__item {
-    width: 225px;
-  }
 }
 @media (min-width: 1200px) {
   html {
@@ -615,6 +783,9 @@ html {
   }
   .menu a {
     padding: 11px 35px;
+  }
+  .pancall {
+    margin-top: 70px;
   }
 }
 /* Максимальная ширина контейнера */

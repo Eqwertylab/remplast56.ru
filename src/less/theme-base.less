@@ -357,16 +357,10 @@ html {
 // Услуги
 // --------------------------------------------------
 .service {
-  margin: 0 -10px;
   padding: 0;
   &__item {
-    display: inline-block;
-    vertical-align: top;
-    width: 235px;
-    padding: 0 10px;
     list-style-type: none;
     margin-bottom: 45px;
-    // height: 250px;
   }
   &__image {
     height: 140px;
@@ -451,11 +445,143 @@ html {
 
   &_landing {
     padding-top: 4.0625rem;
+    background: @content-bg;
     h1 {
       font-size: 2.625rem;
       font-weight: 500;
       margin: 0 0 2.0625rem;
     }
   }
+}
 
+
+
+//
+// Панель "Вызвать мастера"
+// --------------------------------------------------
+.pancall {
+  background: #1f6dd3;
+  color: #fff;
+  padding: 190px 15px 15px;
+  border-radius: 4px;
+  text-align: center;
+  max-width: 450px;
+  margin: auto;
+  position: relative;
+  &__header {
+    font-weight: 500;
+    font-size: 1.625rem; 
+  }
+  &__logo {
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    margin-left: -75px;
+    .square(150px);
+    border-radius: 100%;
+    background-image: url(../img/manfull.png);
+    background-position: -11px 14px;
+    background-size: 130%;
+    background-color: #fff;
+    background-repeat: no-repeat;
+  }
+  &__footer {
+    margin-top: 15px;
+  }
+  &__btn {
+    .button-size(8px; 13px; 16px; 16px; 4px);
+    .button-variant-gradient();
+    border: none;
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+}
+
+
+
+//
+// Панель "Вызвать мастера"
+// --------------------------------------------------
+.introtext {
+  margin-top: 48px;
+}
+
+
+
+//
+// Список "Особенности"
+// --------------------------------------------------
+.features {
+  margin: 0;
+  padding: 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1;
+
+  &__item {
+    background: #eff1f5;
+    list-style-type: none;
+    display: inline-block;
+    padding: 20px 25px;
+    vertical-align: top;
+    margin-right: 30px;
+    margin-bottom: 20px;
+  }
+
+  big {
+    font-size: 2.125rem;
+    line-height: 1.1;
+  }
+}
+
+
+
+//
+// Список "Бренды"
+// --------------------------------------------------
+.brands {
+  margin: 0;
+  padding: 0;
+  &__item {
+    display: inline-block;
+    list-style-type: none;
+    vertical-align: middle;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-bottom: 15px;
+    margin-right: 15px;
+    margin-right: 4%;
+    &:last-child {
+      margin-right: 0;
+    }
+    &_shuc {
+      background-image: url(../img/schuco.png);
+      .size(125px,22px);
+    }
+    &_geal {
+      background-image: url(../img/gealan.png);
+      .size(105px,26px);
+    }
+    &_veka {
+      background-image: url(../img/veka.png);
+      .size(60px,66px);
+    }
+    &_plas {
+      background-image: url(../img/plastmo.png);
+      .size(97px,25px);
+    }
+    &_reha {
+      background-image: url(../img/rehau.png);
+      .size(95px,43px);
+    }
+    &_plaf {
+      background-image: url(../img/plafen.png);
+      .size(98px,39px);
+    }
+    &_kbe {
+      background-image: url(../img/kbe.png);
+      .size(90px,38px);
+    }
+  }
 }
