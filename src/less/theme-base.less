@@ -419,6 +419,7 @@ html {
 // --------------------------------------------------
 .content {
   padding-top: 3.125rem;
+  padding-bottom: 3.75rem;
 
   /* Ссылки */
   a {
@@ -583,5 +584,115 @@ html {
       background-image: url(../img/kbe.png);
       .size(90px,38px);
     }
+  }
+}
+
+
+
+//
+// Footer
+// --------------------------------------------------
+.footer {
+  overflow: hidden;
+  color: #a5adba;
+  padding-bottom: 20px;
+
+  &_landing {
+    background-color: @content-bg; 
+  }
+
+  &__address {
+    margin-top: 15px;
+    font-weight: 700;
+  }
+
+  &__develop {
+    font-size: 13px;
+    margin-top: 30px;
+  }
+
+  /* Ссылки */
+  a {
+    color: #a5adba;
+    text-decoration: none;
+    border-bottom: 1px solid #c4cad3;
+    &:active,
+    &:hover {
+      color: #909aa9;
+      border-color: #b4bac3;
+    }
+    &:visited {
+      color: #909aa9;
+      border-color: #d2d5db;
+    }
+  }
+}
+
+
+
+
+//
+// Меню в футере
+// --------------------------------------------------
+.fmenu {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  &:before {
+    content: "";
+    position: absolute;
+    display: block;
+    right: 100%;
+    top: 15px;
+    width: 9999px;
+    height: 1px;
+    background-color: #c4cad3;
+  }
+  &__item {
+    list-style-type: none;
+    float: left;
+    padding: 5px 12px;
+
+    &:last-child {
+      padding-right: 0;
+    }
+  }
+}
+
+
+
+//
+// Телефон в футере
+// --------------------------------------------------
+.ftel {
+  &__num {
+    margin-top: 15px;
+    font-size: 1.25rem;
+    font-weight: 700;
+    padding-left: 25px;
+    background-image: url(../img/telfooter.png);
+    background-position: 0 center;
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+    display: inline-block;
+  }
+}
+
+
+
+//
+// Копирайт
+// --------------------------------------------------
+.copyright {
+  margin-top: 15px;
+  padding-left: 26px;
+  background-image: url(../img/copy.png);
+  background-repeat: no-repeat;
+  background-size: 22px 20px;
+  background-position: 0 0;
+  &__date {
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1;
   }
 }
