@@ -2,6 +2,33 @@
 // Основное
 // --------------------------------------------------
 
+/* Сетка для смартфона в горизонтальном положении */
+@media (min-width: @screen-xsl-min) and (max-width: @screen-xsl-max) {
+  .make-grid(xsl);
+}
+
+/* visible класс для смартфона в горизонтальном положении */
+.visible-xsl {
+  @media (min-width: @screen-xsl-min) and (max-width: @screen-xsl-max) {
+    .responsive-visibility();
+  }
+}
+.visible-xsl-block {
+  @media (min-width: @screen-xsl-min) and (max-width: @screen-xsl-max) {
+    display: block !important;
+  }
+}
+.visible-xsl-inline {
+  @media (min-width: @screen-xsl-min) and (max-width: @screen-xsl-max) {
+    display: inline !important;
+  }
+}
+.visible-xsl-inline-block {
+  @media (min-width: @screen-xsl-min) and (max-width: @screen-xsl-max) {
+    display: inline-block !important;
+  }
+}
+
 html {
   font-size: 75%;
 }
@@ -58,6 +85,7 @@ html {
   color: #fff;
   padding: 25px 0 8px;
   overflow: hidden;
+  position: relative;
 
   &__logo {
     display: block;
@@ -126,6 +154,7 @@ html {
     margin-bottom: -8px;  
     height: 310px;
     position:relative;  
+    z-index: 1;
   }
   &__title {
     position: relative;
@@ -219,12 +248,14 @@ html {
 // --------------------------------------------------
 
 .menu {
+  position: relative;
+  z-index: 2;
+  width: 100%;
   margin: 0;
   padding: 0;
   display: table;
   border-radius: 4px;
   #gradient > .vertical(@navi-grad-color1, @navi-grad-color2);
-  width: 100%;
   li {
     list-style-type: none;
     position: relative;
@@ -249,9 +280,29 @@ html {
   }
   > li {
     display: table-cell;
+    &:hover,
+    &.active {
+      > a {
+        &:after {
+          display: none;
+        }
+      }
+    }
     > a {
       text-transform: uppercase;
       text-align: center;
+      position: relative;
+      &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        right: -1px;
+        top: 50%;
+        margin-top: -10px;
+        .size(2px, 21px);
+        background-image: url(../img/delim.png);
+        background-repeat: no-repeat;
+      }
     }
     &:first-child > a {
       border-radius: 4px 0 0 4px;
@@ -296,6 +347,7 @@ html {
 // --------------------------------------------------
 .search {
   position: relative;
+  z-index: 3;
   &__icon {
     display: inline-block;
     background-image: url(../img/search.png);
@@ -606,11 +658,6 @@ html {
     font-weight: 700;
   }
 
-  &__develop {
-    font-size: 13px;
-    margin-top: 30px;
-  }
-
   /* Ссылки */
   a {
     color: #a5adba;
@@ -681,6 +728,24 @@ html {
 
 
 //
+// Разработчики
+// --------------------------------------------------
+.develop {
+  font-size: 11px;
+  line-height: 1.2;
+  margin-top: 20px;
+  .clearfix();
+  text-align: right;
+  &__item {
+    display: inline-block;
+    text-align: left;
+    margin-left: 15px;
+  }
+}
+
+
+
+//
 // Копирайт
 // --------------------------------------------------
 .copyright {
@@ -694,5 +759,23 @@ html {
     font-size: 1.25rem;
     font-weight: 700;
     line-height: 1;
+  }
+}
+
+
+
+//
+// Модальное окно
+// --------------------------------------------------
+.modal {
+  &__content {
+    padding: 7px;
+    background: #fff;
+    border: 1px solid #e4e8ed;
+  }
+  &__inner {
+    background: #3448aa;
+    border-radius: 4px;
+    padding: 0 30px;
   }
 }
