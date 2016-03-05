@@ -2,39 +2,13 @@
 // Основное
 // --------------------------------------------------
 
-/* Сетка для смартфона в горизонтальном положении */
-@media (min-width: @screen-xsl-min) and (max-width: @screen-xsl-max) {
-  .make-grid(xsl);
-}
-
-/* visible класс для смартфона в горизонтальном положении */
-.visible-xsl {
-  @media (min-width: @screen-xsl-min) and (max-width: @screen-xsl-max) {
-    .responsive-visibility();
-  }
-}
-.visible-xsl-block {
-  @media (min-width: @screen-xsl-min) and (max-width: @screen-xsl-max) {
-    display: block !important;
-  }
-}
-.visible-xsl-inline {
-  @media (min-width: @screen-xsl-min) and (max-width: @screen-xsl-max) {
-    display: inline !important;
-  }
-}
-.visible-xsl-inline-block {
-  @media (min-width: @screen-xsl-min) and (max-width: @screen-xsl-max) {
-    display: inline-block !important;
-  }
-}
-
 html {
   font-size: 75%;
 }
 
 .container-fluid {
   max-width: @screen-xlg-min;
+  padding: 0 6%;
 }
 
 //
@@ -89,15 +63,15 @@ html {
 
   &__logo {
     display: block;
-    .size(142px,49px);
+    .size(8.875rem,3.0625rem);
     background-image: url(../img/logo.png);
-    background-size: 142px 49px;
+    background-size: 8.875rem 3.0625rem;
     background-repeat: no-repeat; 
   }
 
   &__tel {
     font-weight: bold;
-    font-size: 1.87rem;
+    font-size: 1.81rem;
     line-height: 1.27;
     margin-top: 15px;
     span {
@@ -143,18 +117,14 @@ html {
     }
   }
 
-  &__action {
-    text-align: right;
-  }
-
-
 
   /* Баннер на лендинге */
   &__slide {
     margin-bottom: -8px;  
-    height: 310px;
+    height: 275px;
     position:relative;  
     z-index: 1;
+    white-space: nowrap;
   }
   &__title {
     position: relative;
@@ -162,20 +132,24 @@ html {
     font-size: 2.25rem;
     font-weight: 700;
     line-height: 1.1;
-    text-align: center;
-    padding-top: 25px;  
+    padding-top: 25px; 
+    margin: 0; 
+    white-space: normal;
+    span {
+      display: block;
+    }
   }
   &__image {
     position: absolute;
     z-index: 1;
-    left: 50%;
+    left: 0;
     bottom: 0; 
-    margin-left: -140px;
-    .size(280px, 172px);
+    right: 0;
+    height: 150px;
     background-image: url(../img/window.png);
-    background-position: center;
+    background-position: center top;
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
   }
 }
 
@@ -263,7 +237,7 @@ html {
   a {
     color: @navi-color;
     display: block;
-    padding: 11px 12px;
+    padding: 11px 7px;
     text-decoration: none;
     height: @navi-height;
     line-height: 1;
@@ -410,8 +384,8 @@ html {
 // --------------------------------------------------
 .service {
   padding: 0;
+  list-style-type: none;
   &__item {
-    list-style-type: none;
     margin-bottom: 45px;
   }
   &__image {
@@ -455,6 +429,7 @@ html {
   &__title {
     margin-top: 8px;
     font-size: 15px;
+    max-width: 255px;
   }
   &__price {
     margin-top: 8px;
@@ -768,14 +743,57 @@ html {
 // Модальное окно
 // --------------------------------------------------
 .modal {
+  padding: 0 15px;
   &__content {
     padding: 7px;
     background: #fff;
     border: 1px solid #e4e8ed;
   }
   &__inner {
-    background: #3448aa;
+    background: @modal-bg;
     border-radius: 4px;
-    padding: 0 30px;
+    padding: 0 1.875rem;
+    position: relative;
+  }
+  &__close {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    border: 1px solid @modal-close-color;
+    border-radius: 100%;
+    background-color: transparent;
+    color: @modal-close-color;
+    font-size: 18px;
+    line-height: 1;
+    opacity: 0.7;
+    .square(26px);
+    &:hover {
+      opacity: 1;
+    }
+    &:active {
+      background-color: @modal-close-color;
+      &:before {
+        color: @modal-close-hover-color;
+      }
+    }
+    &:before {
+      content: "\00D7";
+      display: inline-block;
+      vertical-align: 3px;
+    }
+  }
+  &__wind {
+    max-width: 390px;
+    margin: 30px auto 0;
+  }
+  &__header {
+    padding-top: 1.875rem;
+  }
+  &__logo {
+    height: 36px;
+    background-repeat: no-repeat;
+    background-size: auto 36px;
+    background-position: left top;
+    background-image: url(../img/logo.png); 
   }
 }

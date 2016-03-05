@@ -15,9 +15,11 @@
   // --------------------------------------------------
   .head {
     padding-top: 40px;
+    &__logo {
+      float: left;
+    }
     &__info {
       float: right;
-      width: auto;
     }
     &__contacts {
       float: left;
@@ -65,8 +67,10 @@
       display: inline-block;
       vertical-align: middle;
       font-size: 3.5rem;
-      text-align: left;
       padding-top: 0;
+      span {
+        max-width: 61%;
+      }
     }
     &__image {
       left: auto;

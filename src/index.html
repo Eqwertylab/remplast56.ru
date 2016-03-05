@@ -43,11 +43,9 @@
 
       <header class="head" id="head">
         <div class="container-fluid">
-          <div class="row">
-            <div class="col-sm-3">
-              <a href="#" class="head__logo"></a>
-            </div>
-            <div class="col-sm-9 head__info">
+          <div class="clearfix">
+            <a href="#" class="head__logo"></a>
+            <div class="head__info">
               <div class="head__contacts">
                 <div class="head__tel">
                   <span>55-35-84, 20-25-96, 594-300</span>
@@ -104,9 +102,9 @@
             </div>
           </div>
           <div class="head__slide"> 
-            <div class="head__title">
-              Ремонт и сервисное <br>обслуживание<br>пластиковых окон
-            </div>
+            <h1 class="head__title">
+              <span>Ремонт и сервисное обслуживание пластиковых окон</span>
+            </h1>
             <div class="head__image"></div>
           </div>
         </div>
@@ -116,48 +114,48 @@
         <div class="container-fluid">
           <h1>Услуги</h1>
           <ul class="row service">
-            <li class="col-xsl-6 col-sm-6 col-md-4 col-lg-3 service__item">
+            <li class="col-xsl-6 col-sm-4 col-md-3 col-lg-3 service__item">
               <div class="service__image service__image_wind"></div>
-              <div class="service__title"><a href="">Регулировка и профилактика изделий из ПВХ</a></div>
+              <div class="service__title"><a href="regulirovka.html">Регулировка и профилактика изделий из ПВХ</a></div>
               <div class="service__price">200...500 руб.</div>
             </li>
-            <li class="col-xsl-6 col-sm-6 col-md-4 col-lg-3 service__item">
+            <li class="col-xsl-6 col-sm-4 col-md-3 col-lg-3 service__item">
               <div class="service__image service__image_acce"></div>
-              <div class="service__title"><a href="">Ремонт и замена фурнитуры</a></div>
+              <div class="service__title"><a href="remont.html">Ремонт и замена фурнитуры</a></div>
               <div class="service__price">350...2500 руб.</div>
             </li>
-            <li class="clearfix visible-xsl visible-sm"></li>
-            <li class="col-xsl-6 col-sm-6 col-md-4 col-lg-3 service__item">
+            <li class="clearfix visible-xsl"></li>
+            <li class="col-xsl-6 col-sm-4 col-md-3 col-lg-3 service__item">
               <div class="service__image service__image_uplo"></div>
-              <div class="service__title"><a href="">Замена уплотнения</a></div>
+              <div class="service__title"><a href="zamena.html">Замена уплотнения</a></div>
               <div class="service__price">100 руб. за м<sup>2</sup></div>
             </li>
-            <li class="clearfix visible-md"></li>
-            <li class="col-xsl-6 col-sm-6 col-md-4 col-lg-3 service__item">
+            <li class="clearfix visible-sm"></li>
+            <li class="col-xsl-6 col-sm-4 col-md-3 col-lg-3 service__item">
               <div class="service__image service__image_bug"></div>
-              <div class="service__title"><a href="">Замена стеклопакета</a></div>
+              <div class="service__title"><a href="zam.html">Замена стеклопакета</a></div>
               <div class="service__price">1000...2900 руб. за м<sup>2</sup></div>
             </li>
-            <li class="clearfix visible-xsl visible-sm visible-lg"></li>
-            <li class="col-xsl-6 col-sm-6 col-md-4 col-lg-3 service__item">
+            <li class="clearfix visible-xsl visible-md visible-lg"></li>
+            <li class="col-xsl-6 col-sm-4 col-md-3 col-lg-3 service__item">
               <div class="service__image service__image_pen"></div>
-              <div class="service__title"><a href="">Замена всех видов ручек</a></div>
+              <div class="service__title"><a href="ruch.html">Замена всех видов ручек</a></div>
               <div class="service__price">400...800 руб.</div>
             </li>
-            <li class="col-xsl-6 col-sm-6 col-md-4 col-lg-3 service__item">
+            <li class="col-xsl-6 col-sm-4 col-md-3 col-lg-3 service__item">
               <div class="service__image service__image_ogra"></div>
-              <div class="service__title"><a href="">Установка комплектующих</a></div>
+              <div class="service__title"><a href="ust.html">Установка комплектующих</a></div>
               <div class="service__price">400 руб.</div>
             </li>
-            <li class="clearfix visible-xsl visible-sm visible-md"></li>
-            <li class="col-xsl-6 col-sm-6 col-md-4 col-lg-3 service__item">
+            <li class="clearfix visible-xsl visible-sm"></li>
+            <li class="col-xsl-6 col-sm-4 col-md-3 col-lg-3 service__item">
               <div class="service__image service__image_mesh"></div>
-              <div class="service__title"><a href="">Москитные сетки</a></div>
+              <div class="service__title"><a href="mosk.html">Москитные сетки</a></div>
               <div class="service__price">400...750 руб. за м<sup>2</sup></div>
             </li>
-            <li class="col-xsl-6 col-sm-6 col-md-4 col-lg-3 service__item">
+            <li class="col-xsl-6 col-sm-4 col-md-3 col-lg-3 service__item">
               <div class="service__image service__image_blin"></div>
-              <div class="service__title"><a href="">Жалюзи</a></div>
+              <div class="service__title"><a href="zal.html">Жалюзи</a></div>
               <div class="service__price">300...1300 руб. за м<sup>2</sup></div>
             </li>
           </ul>
@@ -232,17 +230,18 @@
 
     <!-- Окно заявки -->
     <div class="modal fade" tabindex="-1" role="dialog" id="order-modal">
-      <div class="modal-dialog">
+      <div class="modal-dialog modal__wind">
         <div class="modal-content modal__content">
           <div class="modal__inner">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <button type="button" class="modal__close" data-dismiss="modal" aria-label="Close"></button>
+            <div class="modal__header">
+              <div class="modal__logo"></div>
               <h4 class="modal-title">Modal title</h4>
             </div>
-            <div class="modal-body">
+            <div class="modal__body">
               <p>One fine body&hellip;</p>
             </div>
-            <div class="modal-footer">
+            <div class="modal__footer">
               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
               <button type="button" class="btn btn-primary">Save changes</button>
             </div>
@@ -263,6 +262,10 @@
     <script src="js/form.js"></script>
     <script src="js/scroll.js"></script>
     <!-- endbuild -->
+
+    <script>
+      // $('#order-modal').modal('show');
+    </script>
 
   </body>
 </html>
