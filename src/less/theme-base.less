@@ -14,8 +14,8 @@ html {
 //
 // Создатель кнопок с вертикальным градиентом
 // --------------------------------------------------
-@active-gr-color1: #5eba1f;
-@active-gr-color2: #66c227;
+@active-gr-color1: #66c227;
+@active-gr-color2: #5eba1f;
 
 .button-variant-gradient(@btn-gr-color1:@active-gr-color1; @btn-gr-color2:@active-gr-color2; @color:#fff;) {
 
@@ -95,7 +95,7 @@ html {
   &__call {
     .button-size(8px; 13px; 16px; 16px; 4px);
     .button-variant-gradient();
-    border: none;
+    border: 0px;
     margin-top: 20px;
     font-weight: 500;
     text-transform: uppercase;
@@ -110,9 +110,12 @@ html {
       position: absolute;
       right: 0;
       bottom: 0;
-      .size(81px,75px);
-      background-image: url(../img/man-small.png);
+      @head-small-man: '../img/man-small.png';
+      .size(image-width(@head-small-man),image-height(@head-small-man));
+      background-position: right 0 bottom 0;
       background-repeat: no-repeat;
+      background-image: url(@head-small-man);
+      background-size: image-size(@head-small-man);
       z-index: 1;
     }
   }
@@ -392,6 +395,7 @@ html {
     height: 140px;
     background-repeat: no-repeat;
     background-position: left bottom;
+    cursor: pointer;
     &_wind {
       background-image: url(../img/wind-open.png);
       background-size: 90px 139px;
@@ -490,28 +494,24 @@ html {
 .pancall {
   background: #1f6dd3;
   color: #fff;
-  padding: 190px 15px 15px;
+  padding: 15px;
   border-radius: 4px;
-  text-align: center;
-  max-width: 450px;
-  margin: auto;
   position: relative;
   &__header {
     font-weight: 500;
     font-size: 1.625rem; 
+    margin-top: 0;
   }
   &__logo {
     position: absolute;
-    top: 40px;
-    left: 50%;
-    margin-left: -75px;
-    .square(150px);
-    border-radius: 100%;
-    background-image: url(../img/manfull.png);
-    background-position: -11px 14px;
-    background-size: 130%;
-    background-color: #fff;
+    display: none;
+    left: 20px;
+    bottom: 0;
+    .size(236px, 219px);
+    background-position: center;
     background-repeat: no-repeat;
+    background-image: url(../img/manfull.png);
+    background-size: 236px, 219px;
   }
   &__footer {
     margin-top: 15px;
@@ -545,6 +545,8 @@ html {
   font-size: 1.25rem;
   font-weight: 700;
   line-height: 1;
+  display: flex;
+  flex-wrap: wrap;
 
   &__item {
     background: #eff1f5;
@@ -560,6 +562,13 @@ html {
     font-size: 2.125rem;
     line-height: 1.1;
   }
+}
+
+
+.setPersentImageSize(@imageurl, @pers:100) {
+  @imgwidth:  image-width(@imageurl) / 100 * @pers;
+  @imgheight: image-height(@imageurl) / 100 * @pers;
+  .size(@imgwidth,@imgheight);
 }
 
 
@@ -580,36 +589,44 @@ html {
     margin-bottom: 15px;
     margin-right: 15px;
     margin-right: 4%;
+    @imagesize: 70;
     &:last-child {
       margin-right: 0;
     }
     &_shuc {
-      background-image: url(../img/schuco.png);
-      .size(125px,22px);
+      @imageurl: '../img/schuco.png';
+      background-image: url(@imageurl);
+      .setPersentImageSize(@imageurl, @imagesize);
     }
     &_geal {
-      background-image: url(../img/gealan.png);
-      .size(105px,26px);
+      @imageurl: '../img/gealan.png';
+      background-image: url(@imageurl);
+      .setPersentImageSize(@imageurl, @imagesize);
     }
     &_veka {
-      background-image: url(../img/veka.png);
-      .size(60px,66px);
+      @imageurl: '../img/veka.png';
+      background-image: url(@imageurl);
+      .setPersentImageSize(@imageurl, @imagesize);
     }
     &_plas {
-      background-image: url(../img/plastmo.png);
-      .size(97px,25px);
+      @imageurl: '../img/plastmo.png';
+      background-image: url(@imageurl);
+      .setPersentImageSize(@imageurl, @imagesize);
     }
     &_reha {
-      background-image: url(../img/rehau.png);
-      .size(95px,43px);
+      @imageurl: '../img/rehau.png';
+      background-image: url(@imageurl);
+      .setPersentImageSize(@imageurl, @imagesize);
     }
     &_plaf {
-      background-image: url(../img/plafen.png);
-      .size(98px,39px);
+      @imageurl: '../img/plafen.png';
+      background-image: url(@imageurl);
+      .setPersentImageSize(@imageurl, @imagesize);
     }
     &_kbe {
-      background-image: url(../img/kbe.png);
-      .size(90px,38px);
+      @imageurl: '../img/kbe.png';
+      background-image: url(@imageurl);
+      .setPersentImageSize(@imageurl, @imagesize);
     }
   }
 }
@@ -708,13 +725,10 @@ html {
 .develop {
   font-size: 11px;
   line-height: 1.2;
-  margin-top: 20px;
+  margin-top: 14px;
   .clearfix();
-  text-align: right;
   &__item {
-    display: inline-block;
-    text-align: left;
-    margin-left: 15px;
+    margin-top: 5px;
   }
 }
 
@@ -797,3 +811,183 @@ html {
     background-image: url(../img/logo.png); 
   }
 }
+
+
+@media (min-width: @screen-xsl-min)
+{ 
+  //
+  // Разработчики
+  // --------------------------------------------------
+  .develop {
+    text-align: right;
+    &__item {
+      display: inline-block;
+      text-align: left;
+      margin-left: 15px;
+      margin-top: 0px;
+    }
+  }
+}
+
+
+
+
+//
+// Ретина стили
+// --------------------------------------------------
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (   min--moz-device-pixel-ratio: 2),
+only screen and (     -o-min-device-pixel-ratio: 2/1),
+only screen and (        min-device-pixel-ratio: 2) { 
+
+  //
+  // Заголовок
+  // --------------------------------------------------
+  .head {
+    &__logo {
+      background-image: url(../img/logo@2x.png);
+    }
+    &__call {
+      &:before {
+        background-image: url(../img/man-small@2x.png);
+      }
+    }
+    /* Баннер на лендинге */
+    &__image {
+        background-image: url(../img/window@2x.png);
+      }
+    }
+
+
+
+  //
+  // Блок навигации
+  // --------------------------------------------------
+  .navi {
+    &__toggle {
+      &:before {
+        background-image: url(../img/menu@2x.png);
+      }
+    }
+  }
+
+
+
+  //
+  // Форма поиска
+  // --------------------------------------------------
+  .search {
+    &__icon {
+      background-image: url(../img/search@2x.png);
+    }
+  }
+
+
+
+  //
+  // Услуги
+  // --------------------------------------------------
+  .service {
+    &__image {
+      &_wind {
+        background-image: url(../img/wind-open@2x.png);
+      }
+      &_acce {
+        background-image: url(../img/accessories@2x.png);
+      }
+      &_uplo {
+        background-image: url(../img/uplotnit@2x.png);
+      }
+      &_bug {
+        background-image: url(../img/bug@2x.png);
+      }
+      &_pen {
+        background-image: url(../img/pen@2x.png);
+      }
+      &_ogra {
+        background-image: url(../img/ogranichtel@2x.png);
+      }
+      &_mesh {
+        background-image: url(../img/mesh@2x.png);
+      }
+      &_blin {
+        background-image: url(../img/blinds@2x.png);
+      }
+    }
+  }
+
+
+
+  //
+  // Панель "Вызвать мастера"
+  // --------------------------------------------------
+  .pancall {
+    &__logo {
+      background-image: url(../img/manfull@2x.png);
+    }
+  }
+
+
+
+  //
+  // Список "Бренды"
+  // --------------------------------------------------
+  .brands {
+    &__item {
+      &_shuc {
+        background-image: url(../img/schuco@2x.png);
+      }
+      &_geal {
+        background-image: url(../img/gealan@2x.png);
+      }
+      &_veka {
+        background-image: url(../img/veka@2x.png);
+      }
+      &_plas {
+        background-image: url(../img/plastmo@2x.png);
+      }
+      &_reha {
+        background-image: url(../img/rehau@2x.png);
+      }
+      &_plaf {
+        background-image: url(../img/plafen@2x.png);
+      }
+      &_kbe {
+        background-image: url(../img/kbe@2x.png);
+      }
+    }
+  }
+
+
+
+  //
+  // Телефон в футере
+  // --------------------------------------------------
+  .ftel {
+    &__num {
+      background-image: url(../img/telfooter@2x.png);
+    }
+  }
+
+
+
+  //
+  // Копирайт
+  // --------------------------------------------------
+  .copyright {
+    background-image: url(../img/copy@2x.png);
+  }
+
+
+
+  //
+  // Модальное окно
+  // --------------------------------------------------
+  .modal {
+    &__logo {
+      background-image: url(../img/logo@2x.png); 
+    }
+  }
+
+} // <--- END Ретина стили

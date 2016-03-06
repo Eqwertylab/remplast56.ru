@@ -157,41 +157,11 @@
     text-align: left;
     padding: 20px;
     margin-top: 60px;
-    &__header {
-      margin-top: 0;
-    }
     &__logo {
-      .size(236px, 219px);
-      top:auto;
-      left: 20px;
-      bottom: 0;
-      margin-left: 0;
-      background-size: 236px, 219px;
-      background-position: center;
-      background-color: transparent;
-      border-radius: 0;
+      display: block;
     }
     &__body {
       padding-left: 256px;
-    }
-  }
-
-
-
-
-  //
-  // Список "Особенности"
-  // --------------------------------------------------
-  .features {
-    display: table;
-    margin-bottom: 35px;
-    &__item {
-      margin: 0px;
-      display: table-cell;
-      border-right: 30px solid @content-bg;
-      &:last-child {
-        border-right: 0px;
-      }
     }
   }
 
@@ -236,6 +206,41 @@
     text-align: right;
     &__num {
       margin-top: 0;
+    }
+  }
+
+
+  .setImage(@imageurl) {
+    .size(image-width(@imageurl), image-height(@imageurl));
+  }
+
+
+  //
+  // Список "Бренды"
+  // --------------------------------------------------
+  .brands {
+    &__item {
+      &_shuc {
+        .setImage('../img/schuco.png');
+      }
+      &_geal {
+        .setImage('../img/gealan.png');
+      }
+      &_veka {
+        .setImage('../img/veka.png');
+      }
+      &_plas {
+        .setImage('../img/plastmo.png');
+      }
+      &_reha {
+        .setImage('../img/rehau.png');
+      }
+      &_plaf {
+        .setImage('../img/plafen.png');
+      }
+      &_kbe {
+        .setImage('../img/kbe.png');
+      }
     }
   }
 }
