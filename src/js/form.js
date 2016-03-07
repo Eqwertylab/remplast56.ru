@@ -1,10 +1,10 @@
 // 
 // Параметры валидации
 // -----------------------------------
-var order_form_validator = $("#form").validate({
+var order_form_validator = $("#order-form").validate({
 
   rules: {
-    name: "required",
+    fullname: "required",
     tel: {
       required: true,
       minlength: 6
@@ -12,14 +12,14 @@ var order_form_validator = $("#form").validate({
   },
 
   messages: {
-    name: "Укажите ваше имя",
+    fullname: "Укажите ваше имя",
     tel: {
-      required: "Укажите телефон для связи",
+      required: "Напишите телефон чтобы менеджер смог согласовать дату",
       minlength: jQuery.validator.format("Минимальная длина {0} символов")
     }
   },
 
-  errorClass: "text-danger",
+  errorClass: "form__error",
 
   submitHandler: function(form) {
 
@@ -42,7 +42,7 @@ var submit_options = {
     // other available options: 
     //url:       url         // override for form's 'action' attribute 
     //type:      type        // 'get' or 'post', override for form's 'method' attribute 
-    dataType:  'text',       // 'xml', 'script', or 'json' (expected server response type) 
+    dataType:  'json',       // 'xml', 'script', or 'json' (expected server response type) 
     clearForm: true          // clear all form fields after successful submit 
     //resetForm: true        // reset the form after successful submit 
 
@@ -58,21 +58,35 @@ var submit_options = {
 // Удачно
 function showResponse(response, statusText, xhr, $form)  { 
   
-  $('#form__submit').hide();  
-
-  $('#form__success')
-    .text(response)
-    .show();  
+  $('#modal-order').modal('hide');  
+  setModalAnswer(response);
 } 
 
 // Не удачно
 function showError() {
 
-  $('#form__submit').hide();
+  $('#modal-order').modal('hide');
 
-  var response = 'Ошибка! Свяжитесь с нами по телефону.';
+  var response = {
+    title       : 'Ошибка :(',
+    description : 'Пожалуйста перезвоните по одному из следующих телефонов: 55-35-84, 20-25-96, 594-300.'
+  };
 
-  $('#form__error')
-    .text(response)
-    .show();  
+  setModalAnswer(response);
+}
+
+function setModalAnswer(data) {
+  console.log(data);
+
+  var modal_responce = $('#modal-responce');
+
+  $(modal_responce)
+    .find('#modal-title')
+    .text(data.title);
+
+  $(modal_responce)
+    .find('#modal-description')
+    .text(data.description);
+
+  $(modal_responce).modal('show');
 }

@@ -1,4 +1,17 @@
 //
+// Функции
+// --------------------------------------------------
+.setPersentImageSize(@imageurl, @pers:100) {
+  @imgwidth:  image-width(@imageurl) / 100 * @pers;
+  @imgheight: image-height(@imageurl) / 100 * @pers;
+  .size(@imgwidth,@imgheight);
+}
+.setImage(@imageurl) {
+  .size(image-width(@imageurl), image-height(@imageurl));
+}
+
+
+//
 // Основное
 // --------------------------------------------------
 
@@ -565,13 +578,6 @@ html {
 }
 
 
-.setPersentImageSize(@imageurl, @pers:100) {
-  @imgwidth:  image-width(@imageurl) / 100 * @pers;
-  @imgheight: image-height(@imageurl) / 100 * @pers;
-  .size(@imgwidth,@imgheight);
-}
-
-
 
 //
 // Список "Бренды"
@@ -758,6 +764,7 @@ html {
 // --------------------------------------------------
 .modal {
   padding: 0 15px;
+  color: #fff;
   &__content {
     padding: 7px;
     background: #fff;
@@ -766,7 +773,7 @@ html {
   &__inner {
     background: @modal-bg;
     border-radius: 4px;
-    padding: 0 1.875rem;
+    padding: 1.875rem;
     position: relative;
   }
   &__close {
@@ -798,10 +805,7 @@ html {
   }
   &__wind {
     max-width: 390px;
-    margin: 30px auto 0;
-  }
-  &__header {
-    padding-top: 1.875rem;
+    margin: 15px auto 0;
   }
   &__logo {
     height: 36px;
@@ -809,6 +813,66 @@ html {
     background-size: auto 36px;
     background-position: left top;
     background-image: url(../img/logo.png); 
+    margin-bottom: 1.5625rem;
+    display: none;
+  }
+  &__title {
+    font-size: 1.75rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin: 0;
+    line-height: 1;
+  }
+  &__desc {
+    font-size: 14px;
+    padding: 10px 0 0;
+  }
+}
+
+
+
+//
+// Форма
+// --------------------------------------------------
+.form {
+  margin-top: 20px;
+  &-group {
+    margin-bottom: 25px;
+  }
+  &__label {
+    display: block;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  &__control {
+    display: block;
+    width: 100%;
+    outline: none;
+    font-size: 1.5rem;
+    input& {
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid #fff;
+    }
+  }
+  label&__error {
+    padding: 5px 15px;
+    background: #ef0022;
+    font-size: 14px;
+    line-height: 1.1;
+    border-radius: 4px;
+    margin-top: 5px;
+    font-weight: 400;
+  }
+  &__btn {
+    .button-size(8px; 13px; 16px; 16px; 4px);
+    .button-variant-gradient();
+    border: 0px;
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+  &__footer {
+    text-align: right;
   }
 }
 

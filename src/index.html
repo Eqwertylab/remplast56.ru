@@ -55,7 +55,7 @@
                 </div>
               </div>
               <div class="head__action">
-                <button class="head__call" data-toggle="modal" data-target="#order-modal">
+                <button class="head__call" data-toggle="modal" data-target="#modal-order">
                   <span>Вызвать <br class="hidden-xs">мастера</span>
                 </button>
               </div>
@@ -229,21 +229,47 @@
     </section>
 
     <!-- Окно заявки -->
-    <div class="modal fade" tabindex="-1" role="dialog" id="order-modal">
+    <div class="modal fade" tabindex="-1" role="dialog" id="modal-order">
       <div class="modal-dialog modal__wind">
         <div class="modal-content modal__content">
           <div class="modal__inner">
             <button type="button" class="modal__close" data-dismiss="modal" aria-label="Close"></button>
             <div class="modal__header">
               <div class="modal__logo"></div>
-              <h4 class="modal-title">Modal title</h4>
+              <h4 class="modal__title">Вызов мастера</h4>
+              <p class="modal__desc">Менеджер перезвонит и согласует дату и время прихода мастера.</p>
             </div>
             <div class="modal__body">
-              <p>One fine body&hellip;</p>
+              <form class="form" id="order-form" action="action.php">
+                <div class="form-group">
+                  <label for="fullname" class="form__label">Имя</label>
+                  <input name="fullname" class="form__control" id="fullname">
+                </div>
+                <div class="form-group">
+                  <label for="tel" class="form__label">Телефон</label>
+                  <input type="tel" name="tel" class="form__control">
+                  <!-- <div class="form__error">Напишите телефон чтобы менеджер смог согласовать дату.</div> -->
+                </div>
+                <div class="form__footer">
+                  <button class="form__btn">Вызвать мастера</button>
+                </div>
+              </form>
             </div>
-            <div class="modal__footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <!-- Окно ответа -->
+    <div class="modal fade" tabindex="-1" role="dialog" id="modal-responce">
+      <div class="modal-dialog modal__wind">
+        <div class="modal-content modal__content">
+          <div class="modal__inner">
+            <button type="button" class="modal__close" data-dismiss="modal" aria-label="Close"></button>
+            <div class="modal__header">
+              <div class="modal__logo"></div>
+              <h4 class="modal__title" id="modal-title">Заявка принята</h4>
+              <p class="modal__desc" id="modal-description">Менеджер перезвонит и согласует дату и время прихода мастера.</p>
             </div>
           </div>
         </div><!-- /.modal-content -->
@@ -258,13 +284,14 @@
     <script src="../bower_components/jquery-smooth-scrolling/jquery.smoothscroll.js"></script>
     <script src="../bower_components/jQuery.mmenu/dist/js/jquery.mmenu.min.js"></script>
     <script src="js/mmenu.js"></script>
+    <script src="js/modal.js"></script>
     <script src="js/search.js"></script>
     <script src="js/form.js"></script>
     <script src="js/scroll.js"></script>
     <!-- endbuild -->
 
     <script>
-      // $('#order-modal').modal('show');
+      $('#order-modal').modal('show');
     </script>
 
   </body>

@@ -210,10 +210,6 @@
   }
 
 
-  .setImage(@imageurl) {
-    .size(image-width(@imageurl), image-height(@imageurl));
-  }
-
 
   //
   // Список "Бренды"
@@ -241,6 +237,20 @@
       &_kbe {
         .setImage('../img/kbe.png');
       }
+    }
+  }
+
+
+
+  //
+  // Модальное окно
+  // --------------------------------------------------
+  .modal {
+    &__wind {
+      margin-top: 40px;
+    }
+    &__logo {
+      display: block;
     }
   }
 }
