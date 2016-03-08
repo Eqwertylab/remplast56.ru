@@ -830,6 +830,119 @@ html {
   max-width: 1500px;
   padding: 0 6%;
 }
+h2,
+h3,
+h4 {
+  margin-top: 25px;
+}
+.content {
+  padding-top: 3.125rem;
+  padding-bottom: 3.75rem;
+  position: relative;
+  z-index: 1;
+  /* Ссылки */
+  /* Заголовки */
+  /* Картинки */
+  /* Таблица */
+}
+.content a {
+  text-decoration: none;
+  border-bottom: 1px solid #bec5e2;
+}
+.content a:active,
+.content a:hover {
+  color: #0e2485;
+  border-color: #8691c2;
+}
+.content a:visited {
+  color: #b40eb4;
+  border-color: #e8b6e8;
+}
+.content p {
+  line-height: 23px;
+}
+.content blockquote {
+  text-align: center;
+  font-size: 1.875rem;
+  font-weight: 400;
+  position: relative;
+  background: transparent;
+  quotes: none;
+  border: 0;
+  margin: 40px 0;
+}
+.content blockquote:before,
+.content blockquote:after {
+  content: "";
+  position: absolute;
+  display: block;
+  height: 1px;
+  left: 50%;
+  background: #a5a5a5;
+  width: 156px;
+  margin-left: -78px;
+}
+.content blockquote:before {
+  top: -1px;
+}
+.content blockquote:after {
+  bottom: -1px;
+}
+.content h1 {
+  margin: 0 0 3.125rem;
+  font-size: 3.25rem;
+  font-weight: 700;
+  line-height: 1;
+}
+.content_landing {
+  padding-top: 4.0625rem;
+  background: #e5e9ee;
+}
+.content_landing h1 {
+  font-size: 2.625rem;
+  font-weight: 500;
+  margin: 0 0 2.0625rem;
+}
+.content img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 15px 0;
+}
+.content th,
+.content td {
+  padding: 5px 20px;
+}
+ul.list-ul > li {
+  list-style-type: none;
+  position: relative;
+  margin-bottom: 10px;
+}
+ul.list-ul > li:before {
+  content: "\25CF";
+  color: #66c226;
+  position: absolute;
+  left: -1em;
+  line-height: 1.12;
+  font-size: 125%;
+}
+ol.list-ol {
+  counter-reset: item;
+  margin-bottom: 10px;
+}
+ol.list-ol > li {
+  list-style-type: none;
+  position: relative;
+  margin-bottom: 10px;
+}
+ol.list-ol > li:before {
+  counter-increment: item;
+  content: counter(item) ".";
+  color: #66c226;
+  position: absolute;
+  left: -1.3em;
+  font-weight: 700;
+}
 .head {
   /* http://www.colorzilla.com/gradient-editor/#283d9f+0,1e4fb2+25,1e5fc3+50,1f6cd1+75,1f6dd3+100 */
   background: #283d9f;
@@ -839,9 +952,12 @@ html {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#283d9f', endColorstr='#1f6dd3', GradientType=0);
   color: #fff;
   padding: 25px 0 8px;
-  overflow: hidden;
   position: relative;
+  z-index: 2;
   /* Баннер на лендинге */
+}
+.head_landing {
+  overflow: hidden;
 }
 .head__logo {
   display: block;
@@ -1269,40 +1385,6 @@ html {
   font-size: 13px;
   color: #a4a6ae;
 }
-.content {
-  padding-top: 3.125rem;
-  padding-bottom: 3.75rem;
-  /* Ссылки */
-  /* Заголовки */
-}
-.content a {
-  text-decoration: none;
-  border-bottom: 1px solid #bec5e2;
-}
-.content a:active,
-.content a:hover {
-  color: #0e2485;
-  border-color: #8691c2;
-}
-.content a:visited {
-  color: #b40eb4;
-  border-color: #e8b6e8;
-}
-.content h1 {
-  margin: 0 0 3.125rem;
-  font-size: 3.25rem;
-  font-weight: 700;
-  line-height: 1;
-}
-.content_landing {
-  padding-top: 4.0625rem;
-  background: #e5e9ee;
-}
-.content_landing h1 {
-  font-size: 2.625rem;
-  font-weight: 500;
-  margin: 0 0 2.0625rem;
-}
 .pancall {
   background: #1f6dd3;
   color: #fff;
@@ -1612,8 +1694,34 @@ html {
   font-size: 14px;
   padding: 10px 0 0;
 }
+.fwrap {
+  padding: 7px;
+  background: #edf0f4;
+  border: 1px solid #e4e8edi;
+  border-radius: 4px;
+  max-width: 390px;
+  margin: 15px 0;
+}
+.fwrap__inner {
+  border-radius: 4px;
+  padding: 1.875rem;
+  position: relative;
+  background: #ffffff;
+}
+.fwrap__title {
+  font-size: 1.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin: 0;
+  line-height: 1;
+}
+.fwrap__desc {
+  font-size: 14px;
+  padding: 10px 0 0;
+}
 .form {
   margin-top: 20px;
+  /* Форма встроенная в контент */
 }
 .form-group {
   margin-bottom: 25px;
@@ -1629,10 +1737,16 @@ html {
   outline: none;
   font-size: 1.5rem;
 }
+textarea.form__control,
 input.form__control {
   background: transparent;
   border: none;
   border-bottom: 1px solid #fff;
+  resize: none;
+}
+textarea.form__control {
+  font-size: 1rem;
+  height: 100px;
 }
 label.form__error {
   padding: 5px 15px;
@@ -1642,6 +1756,7 @@ label.form__error {
   border-radius: 4px;
   margin-top: 5px;
   font-weight: 400;
+  color: #fff;
 }
 .form__btn {
   padding: 8px 13px;
@@ -1656,6 +1771,7 @@ label.form__error {
   border: 0px;
   font-weight: 500;
   text-transform: uppercase;
+  color: #fff;
 }
 .form__btn:focus,
 .form__btn.focus {
@@ -1692,6 +1808,13 @@ label.form__error {
 }
 .form__footer {
   text-align: right;
+}
+.form_embed .form__label {
+  color: #949494;
+}
+.form_embed textarea.form__control,
+.form_embed input.form__control {
+  border-bottom: 1px solid #bbbbbb;
 }
 @media (min-width: 480px) {
   .develop {

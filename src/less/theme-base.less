@@ -11,6 +11,7 @@
 }
 
 
+
 //
 // Основное
 // --------------------------------------------------
@@ -23,6 +24,11 @@ html {
   max-width: @screen-xlg-min;
   padding: 0 6%;
 }
+
+h2,h3,h4 {
+  margin-top: 25px;
+}
+
 
 //
 // Создатель кнопок с вертикальным градиентом
@@ -58,6 +64,138 @@ html {
 
 
 //
+// Контент
+// --------------------------------------------------
+.content {
+  padding-top: 3.125rem;
+  padding-bottom: 3.75rem;
+  position: relative;
+  z-index: 1;
+
+  /* Ссылки */
+  a {
+    text-decoration: none;
+    border-bottom: 1px solid #bec5e2;
+    &:active,
+    &:hover {
+      color: #0e2485;
+      border-color: #8691c2;
+    }
+    &:visited {
+      color: #b40eb4;
+      border-color: #e8b6e8;
+    }
+  }
+
+  p {
+    line-height: 23px; 
+  }
+
+  blockquote {
+    @blockquote: 156px;
+    text-align: center;
+    font-size: 1.875rem;
+    font-weight: 400;
+    position: relative;
+    background:transparent;
+    quotes:none;
+    border:0;
+    margin: 40px 0;
+    &:before,
+    &:after {
+      content: "";
+      position: absolute;
+      display: block;
+      height: 1px;
+      left: 50%;
+      background: #a5a5a5;
+      width: @blockquote;
+      margin-left: -(@blockquote / 2);
+    }
+    &:before {
+      top: -1px;
+    }
+    &:after {
+      bottom: -1px;
+    }
+  }
+  
+  /* Заголовки */
+  h1 {
+    margin: 0 0 3.125rem;
+    font-size: 3.25rem;
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  &_landing {
+    padding-top: 4.0625rem;
+    background: @content-bg;
+    h1 {
+      font-size: 2.625rem;
+      font-weight: 500;
+      margin: 0 0 2.0625rem;
+    }
+  }
+
+  /* Картинки */
+  img {
+    .img-responsive();
+    margin: 15px 0;
+  }
+  
+  /* Таблица */
+  table {
+
+  }
+  th,
+  td {
+    padding: 5px 20px
+  }
+  th {
+    background: #edf0f4;
+  }
+}
+
+
+
+//
+// Списки
+// --------------------------------------------------
+ul.list-ul > li {
+  list-style-type: none;
+  position: relative;
+  margin-bottom: 10px;
+  &:before {
+    content: "\25CF";
+    color: #66c226;
+    position: absolute;
+    left: -1em;
+    line-height: 1.12;
+    font-size: 125%;
+  }
+}
+ol.list-ol {
+  counter-reset: item;
+  margin-bottom: 10px;
+  > li {
+    list-style-type: none;
+    position: relative;
+    margin-bottom: 10px;
+    &:before {
+      counter-increment: item;
+      content: counter(item)".";
+      color: #66c226;
+      position: absolute;
+      left: -1.3em;
+      font-weight: 700;
+    }
+  }
+}
+
+
+
+//
 // Заголовок
 // --------------------------------------------------
 .head {
@@ -71,8 +209,12 @@ html {
 
   color: #fff;
   padding: 25px 0 8px;
-  overflow: hidden;
   position: relative;
+  z-index: 2;
+
+  &_landing {
+    overflow: hidden;
+  }
 
   &__logo {
     display: block;
@@ -459,49 +601,6 @@ html {
 
 
 //
-// Контент
-// --------------------------------------------------
-.content {
-  padding-top: 3.125rem;
-  padding-bottom: 3.75rem;
-
-  /* Ссылки */
-  a {
-    text-decoration: none;
-    border-bottom: 1px solid #bec5e2;
-    &:active,
-    &:hover {
-      color: #0e2485;
-      border-color: #8691c2;
-    }
-    &:visited {
-      color: #b40eb4;
-      border-color: #e8b6e8;
-    }
-  }
-  
-  /* Заголовки */
-  h1 {
-    margin: 0 0 3.125rem;
-    font-size: 3.25rem;
-    font-weight: 700;
-    line-height: 1;
-  }
-
-  &_landing {
-    padding-top: 4.0625rem;
-    background: @content-bg;
-    h1 {
-      font-size: 2.625rem;
-      font-weight: 500;
-      margin: 0 0 2.0625rem;
-    }
-  }
-}
-
-
-
-//
 // Панель "Вызвать мастера"
 // --------------------------------------------------
 .pancall {
@@ -832,9 +931,42 @@ html {
 
 
 //
+// Модальное окно
+// --------------------------------------------------
+.fwrap {
+  padding: 7px;
+  background: #edf0f4;
+  border: 1px solid #e4e8edi;
+  border-radius: 4px;
+  max-width: 390px;
+  margin: 15px 0;
+  &__inner {
+    border-radius: 4px;
+    padding: 1.875rem;
+    position: relative;
+    background: #ffffff;
+  }
+  &__title {
+    font-size: 1.75rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin: 0;
+    line-height: 1;
+  }
+  &__desc {
+    font-size: 14px;
+    padding: 10px 0 0;
+  }
+}
+
+
+
+
+//
 // Форма
 // --------------------------------------------------
 .form {
+  @form: .form;
   margin-top: 20px;
   &-group {
     margin-bottom: 25px;
@@ -849,11 +981,17 @@ html {
     width: 100%;
     outline: none;
     font-size: 1.5rem;
-    input& {
-      background: transparent;
-      border: none;
-      border-bottom: 1px solid #fff;
-    }
+  }
+  textarea&__control,
+  input&__control {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #fff;
+    resize: none;
+  }
+  textarea&__control {
+    font-size: 1rem;
+    height: 100px;
   }
   label&__error {
     padding: 5px 15px;
@@ -863,6 +1001,7 @@ html {
     border-radius: 4px;
     margin-top: 5px;
     font-weight: 400;
+    color: #fff;
   }
   &__btn {
     .button-size(8px; 13px; 16px; 16px; 4px);
@@ -870,9 +1009,21 @@ html {
     border: 0px;
     font-weight: 500;
     text-transform: uppercase;
+    color: #fff;
   }
   &__footer {
     text-align: right;
+  }
+  
+  /* Форма встроенная в контент */
+  &_embed {
+    @{form}__label {
+      color: #949494;
+    }
+    textarea@{form}__control,
+    input@{form}__control {
+      border-bottom: 1px solid #bbbbbb;
+    }
   }
 }
 

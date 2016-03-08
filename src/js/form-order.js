@@ -1,7 +1,7 @@
 // 
 // Параметры валидации
 // -----------------------------------
-var order_form_validator = $("#order-form").validate({
+var form_order_validator = $("#form-order").validate({
 
   rules: {
     fullname: "required",
@@ -23,17 +23,18 @@ var order_form_validator = $("#order-form").validate({
 
   submitHandler: function(form) {
 
-    $(form).ajaxSubmit(submit_options);
-
+    $(form).ajaxSubmit(submit_order_options);
     return false;
   }
 });
+
+
 
 // 
 // Параметры ajax
 // -----------------------------------
 
-var submit_options = { 
+var submit_order_options = { 
     // target:        '#output2',   // target element(s) to be updated with server response 
     // beforeSubmit:  showRequest,  // pre-submit callback 
     success:       showResponse,  // post-submit callback 
@@ -76,8 +77,6 @@ function showError() {
 }
 
 function setModalAnswer(data) {
-  console.log(data);
-
   var modal_responce = $('#modal-responce');
 
   $(modal_responce)
