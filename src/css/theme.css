@@ -909,9 +909,17 @@ h4 {
   height: auto;
   margin: 15px 0;
 }
-.content th,
-.content td {
-  padding: 5px 20px;
+.content table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+.content table th,
+.content table td {
+  padding: 6px 20px;
+  border: 1px solid #e4e8ed;
+}
+.content table th {
+  background: #edf0f4;
 }
 ul.list-ul > li {
   list-style-type: none;
