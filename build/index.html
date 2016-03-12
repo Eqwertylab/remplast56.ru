@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/style.css">
 
     <!-- Fonts -->
-    <link href='https://fonts.googleapis.com/css?family=Ubuntu:400,500,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Ubuntu:400,400italic,500,500italic,700,700italic&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -20,80 +20,258 @@
     <![endif]-->
   </head>
   <body>
-    
-    <header class="head" id="head">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-sm-3">
+
+    <nav id="mmenu">
+       <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about/">About us</a>
+             <ul>
+                <li><a href="/about/history/">History</a></li>
+                <li><a href="/about/team/">The team</a></li>
+                <li><a href="/about/address/">Our address</a></li>
+             </ul>
+          </li>
+          <li><a href="/contact/">Contact</a></li>
+       </ul>
+    </nav>
+
+    <section>
+
+      <header class="head head_landing" id="head">
+        <div class="container-fluid">
+          <div class="clearfix">
             <a href="#" class="head__logo"></a>
-          </div>
-          <div class="col-sm-9 head__info">
-            <div class="head__contacts">
-              <div class="head__tel">
-                <span>55-35-84, 20-25-96, 594-300</span>
+            <div class="head__info">
+              <div class="head__contacts">
+                <div class="head__tel">
+                  <span>55-35-84, 20-25-96, 594-300</span>
+                </div>
+                <div class="head__address">
+                  <span>Оренбург, ул. Салмышская, д 34 к. 5, оф. 204</span>
+                </div>
               </div>
-              <div class="head__address">
-                <span>Оренбург, ул. Салмышская, д 34 к. 5, оф. 204</span>
-              </div>
-            </div>
-            <div class="head__action">
-              <button class="head__call">
-                <span>Вызвать <br class="hidden-xs">мастера</span>
-              </button>
-            </div>
-          </div>
-        </div>
-        <div class="navi">
-          <button class="navi__toggle visible-xs">Меню</button>    
-          <div class="navi__row">
-            <div class="navi__col navi__col_menu">
-              <div class="menu">
-                <li class="active"><a href="">Главная</a></li>
-                <li><a href="">О компании</a></li>
-                <li>
-                  <a href="">Услуги</a>
-                  <ul class="menu__inner">
-                    <li><a href="">Ремонтные работы</a></li>
-                    <li><a href="">Замена стеклопакетов</a></li>
-                    <li><a href="">Фурнитура</a></li>
-                    <li><a href="">Москитные сетки</a></li>
-                    <li><a href="">Жалюзи</a></li>
-                  </ul>
-                </li>
-                <li><a href="">Цены</a></li>
-                <li><a href="">Гостевая книга</a></li>
-                <li><a href="">Акции</a></li>
-                <li><a href="">Контакты</a></li>
-              </div>
-            </div>
-            <div class="navi__col navi__col_search">
-              <div class="search" id="search">
-                <form class="search__form">
-                  <button type="submit" class="search__submit">
-                    <i class="search__icon"></i>
-                  </button>
-                  <div class="search__input">
-                    <input type="text" name="string" id="search-input">
-                  </div>
-                </form>
-                <button class="search__toggle hidden-xs" id="search-toggle">
-                  <i class="search__icon"></i>
+              <div class="head__action">
+                <button class="head__call" data-toggle="modal" data-target="#modal-order">
+                  <span>Вызвать <br class="hidden-xs">мастера</span>
                 </button>
               </div>
             </div>
           </div>
+          <div class="navi">
+            <button class="navi__toggle visible-xs" id="mmenu-toggle">Меню</button>    
+            <div class="navi__row">
+              <div class="navi__col navi__col_menu">
+                <div class="menu">
+                  <li class="active"><a href="">Главная</a></li>
+                  <li><a href="">О компании</a></li>
+                  <li>
+                    <a href="">Услуги</a>
+                    <ul class="menu__inner">
+                      <li><a href="">Ремонтные работы</a></li>
+                      <li><a href="">Замена стеклопакетов</a></li>
+                      <li><a href="">Фурнитура</a></li>
+                      <li><a href="">Москитные сетки</a></li>
+                      <li><a href="">Жалюзи</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="">Цены</a></li>
+                  <li><a href="">Гостевая книга</a></li>
+                  <li><a href="">Акции</a></li>
+                  <li><a href="">Контакты</a></li>
+                </div>
+              </div>
+              <div class="navi__col navi__col_search">
+                <div class="search" id="search">
+                  <form class="search__form">
+                    <button type="submit" class="search__submit">
+                      <i class="search__icon"></i>
+                    </button>
+                    <div class="search__input">
+                      <input type="text" name="string" id="search-input">
+                    </div>
+                  </form>
+                  <button class="search__toggle hidden-xs" id="search-toggle">
+                    <i class="search__icon"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="head__slide"> 
+            <h1 class="head__title">
+              <span>Ремонт и сервисное обслуживание пластиковых окон</span>
+            </h1>
+            <div class="head__image"></div>
+          </div>
+        </div>
+      </header>
+
+      <main class="content content_landing" id="content">
+        <div class="container-fluid">
+          <div class="h1">Услуги</div>
+          <ul class="row service">
+            <li class="col-xsl-6 col-sm-4 col-md-3 col-lg-3 service__item">
+              <div onclick="location.href='http://ya.ru'" class="service__image service__image_wind"></div>
+              <div class="service__title"><a href="regulirovka.html">Регулировка и профилактика изделий из ПВХ</a></div>
+              <div class="service__price">200...500 руб.</div>
+            </li>
+            <li class="col-xsl-6 col-sm-4 col-md-3 col-lg-3 service__item">
+              <div onclick="location.href='http://ya.ru'" class="service__image service__image_acce"></div>
+              <div class="service__title"><a href="remont.html">Ремонт и замена фурнитуры</a></div>
+              <div class="service__price">350...2500 руб.</div>
+            </li>
+            <li class="clearfix visible-xsl"></li>
+            <li class="col-xsl-6 col-sm-4 col-md-3 col-lg-3 service__item">
+              <div onclick="location.href='http://ya.ru'" class="service__image service__image_uplo"></div>
+              <div class="service__title"><a href="zamena.html">Замена уплотнения</a></div>
+              <div class="service__price">100 руб. за м<sup>2</sup></div>
+            </li>
+            <li class="clearfix visible-sm"></li>
+            <li class="col-xsl-6 col-sm-4 col-md-3 col-lg-3 service__item">
+              <div onclick="location.href='http://ya.ru'" class="service__image service__image_bug"></div>
+              <div class="service__title"><a href="zam.html">Замена стеклопакета</a></div>
+              <div class="service__price">1000...2900 руб. за м<sup>2</sup></div>
+            </li>
+            <li class="clearfix visible-xsl visible-md visible-lg"></li>
+            <li class="col-xsl-6 col-sm-4 col-md-3 col-lg-3 service__item">
+              <div onclick="location.href='http://ya.ru'" class="service__image service__image_pen"></div>
+              <div class="service__title"><a href="ruch.html">Замена всех видов ручек</a></div>
+              <div class="service__price">400...800 руб.</div>
+            </li>
+            <li class="col-xsl-6 col-sm-4 col-md-3 col-lg-3 service__item">
+              <div onclick="location.href='http://ya.ru'" class="service__image service__image_ogra"></div>
+              <div class="service__title"><a href="ust.html">Установка комплектующих</a></div>
+              <div class="service__price">400 руб.</div>
+            </li>
+            <li class="clearfix visible-xsl visible-sm"></li>
+            <li class="col-xsl-6 col-sm-4 col-md-3 col-lg-3 service__item">
+              <div onclick="location.href='http://ya.ru'" class="service__image service__image_mesh"></div>
+              <div class="service__title"><a href="mosk.html">Москитные сетки</a></div>
+              <div class="service__price">400...750 руб. за м<sup>2</sup></div>
+            </li>
+            <li class="col-xsl-6 col-sm-4 col-md-3 col-lg-3 service__item">
+              <div onclick="location.href='http://ya.ru'" class="service__image service__image_blin"></div>
+              <div class="service__title"><a href="zal.html">Жалюзи</a></div>
+              <div class="service__price">300...1300 руб. за м<sup>2</sup></div>
+            </li>
+          </ul>
+          <div class="pancall pancall_landing">
+            <div class="pancall__logo"></div>
+            <div class="pancall__body">
+              <h3 class="pancall__header">Выезд мастера-технолога, консультация, доставка, замер &mdash; бесплатно!</h3>
+              <div class="pancall__main">Оформляйте заказ у мастера или в офисе компании.</div>
+              <div class="pancall__footer">
+                <button class="pancall__btn">Вызвать мастера</button>
+              </div>
+            </div>
+          </div>
+          <div class="introtext">
+            <p>Компания «РемПласт» уже на протяжении многих  лет специализируется на ремонте окон различных типов. Специалисты нашей компании имеют значительный опыт работы с конструкциями практически всех производителей и предлагают профессиональный ремонт окон SCHUCO, GEALAN, VEKA, PLASTMO, REHAU, PLAFEN, KBE и многих других брендов. Из-за особенностей архитектуры фурнитур каждой модели их ремонт стоит доверять только профессионалам. Самостоятельные попытки устранить неисправность могут усложнить проблему и повысить стоимость работы специалиста.</p>
+            <p>Помимо локального устранения дефектов компания «РемПласт» предлагает частным лицам и организациям Оренбурга и Оренбургской области заключить договор на годовое сервисное обслуживание, которое позволит Вам забыть обо всех заботах, связанных с эксплуатацией окон. Такое сотрудничество уже доказало свою состоятельность, т.к. ремонт окон зачастую оказывается в значительной степени дороже профилактики неисправностей.</p>
+            <p>Мы осуществляем ремонт пластиковых окон на всей территории оренбурга и Оренбургской области.</p>
+            <p>Дату и время диагностики и устранения проблем выбирает клиент.</p>
+          </div>
+          <ul class="features">
+            <li class="features__item">Работаем <br><big>10 лет</big></li>
+            <li class="features__item"><big>Год</big> <br>гарантийного<br> обслуживания</li>
+            <li class="features__item">Наличный <br>и безналичный <br><big>расчет</big></li>
+          </ul>
+          <p>Специалисты компании имеют значительный опыт работы с конструкциями практически всех производителей:</p>
+          <ul class="brands">
+            <li class="brands__item brands__item_shuc"></li>
+            <li class="brands__item brands__item_geal"></li>
+            <li class="brands__item brands__item_veka"></li>
+            <li class="brands__item brands__item_plas"></li>
+            <li class="brands__item brands__item_reha"></li>
+            <li class="brands__item brands__item_plaf"></li>
+            <li class="brands__item brands__item_kbe"></li>
+          </ul>
+        </div>
+      </main>
+
+      <div class="footer footer_landing" id="footer">
+        <div class="container-fluid">
+          <nav class="clearfix">
+            <ul class="fmenu">
+              <li class="fmenu__item"><a href="index.html">Главная</a></li>
+              <li class="fmenu__item"><a href="about.html">О компании</a></li>
+              <li class="fmenu__item"><a href="services.html">Услуги</a></li>
+              <li class="fmenu__item"><a href="prices.html">Цены</a></li>
+              <li class="fmenu__item"><a href="guestbook.html">Гостевая книга</a></li>
+              <li class="fmenu__item"><a href="promo.html">Акции</a></li>
+              <li class="fmenu__item"><a href="contacts.html">Контакты</a></li>
+            </ul>
+          </nav>
+          <div class="row footer__about">
+            <div class="col-sm-3">
+              <div class="copyright">
+                Ремпласт<br>
+                <span class="copyright__date">2006 - 2016</span>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="footer__address">Оренбург, улица Салмышская дом 34 к. 5, оф. 204</div>
+            </div>
+            <div class="col-sm-3 ftel">
+              <span class="ftel__num">(3532) 55-35-84</span>
+            </div>
+          </div>
+          <div class="develop">
+            <div class="develop__item">Дизайн - <a href="">Андрей Козинский</a></div>
+            <div class="develop__item">Верстка - <a href="">Дмитрий Карякин</a></div>
+          </div>
         </div>
       </div>
-      <div class="container-fluid head__slide"> 
-        <div class="head__title">
-          Ремонт и сервисное <br>обслуживание<br>пластиковых окон
-        </div>
-        <div class="head__image"></div>
-      </div>
-    </header>
+    </section>
+
+    <!-- Окно заявки -->
+    <div class="modal fade" tabindex="-1" role="dialog" id="modal-order">
+      <div class="modal-dialog modal__wind">
+        <div class="modal-content modal__content">
+          <div class="modal__inner">
+            <button type="button" class="modal__close" data-dismiss="modal" aria-label="Close"></button>
+            <div class="modal__header">
+              <div class="modal__logo"></div>
+              <h4 class="modal__title">Вызов мастера</h4>
+              <p class="modal__desc">Менеджер перезвонит и согласует дату и время прихода мастера.</p>
+            </div>
+            <div class="modal__body">
+              <form class="form" id="order-form" action="action.php">
+                <div class="form-group">
+                  <label for="fullname" class="form__label">Имя</label>
+                  <input name="fullname" class="form__control" id="fullname">
+                </div>
+                <div class="form-group">
+                  <label for="tel" class="form__label">Телефон</label>
+                  <input type="tel" name="tel" class="form__control">
+                  <!-- <label class="form__error">Напишите телефон чтобы менеджер смог согласовать дату.</label> -->
+                </div>
+                <div class="form__footer">
+                  <button class="form__btn">Вызвать мастера</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <!-- Окно ответа -->
+    <div class="modal fade" tabindex="-1" role="dialog" id="modal-responce">
+      <div class="modal-dialog modal__wind">
+        <div class="modal-content modal__content">
+          <div class="modal__inner">
+            <button type="button" class="modal__close" data-dismiss="modal" aria-label="Close"></button>
+            <div class="modal__header">
+              <div class="modal__logo"></div>
+              <h4 class="modal__title" id="modal-title">Заявка принята</h4>
+              <p class="modal__desc" id="modal-description">Менеджер перезвонит и согласует дату и время прихода мастера.</p>
+            </div>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
     
-
     <script src="js/script.js"></script>
-
   </body>
 </html>

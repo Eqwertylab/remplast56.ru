@@ -156,12 +156,41 @@
     max-width: 100%;
     text-align: left;
     padding: 20px;
-    margin-top: 60px;
+    margin-top: 100px;
+    min-height: 153px;
     &__logo {
       display: block;
     }
     &__body {
       padding-left: 256px;
+    }
+    &_small {
+      margin-top: 70px;
+      min-height: 109px;
+      @{pancall}__body {
+        padding-left: 205px;
+      }
+    }
+    &_landing {
+      margin-top: 60px;
+    }
+  }
+
+
+
+  //
+  // Панель "Москитные сетки"
+  // --------------------------------------------------
+  .panmesh {
+    height: 140px;
+    &__header {
+      font-size: 2rem; 
+    }
+    &__body {
+      padding-right: 170px;
+    }
+    &__logo {
+      height: 193px;
     }
   }
 
@@ -253,4 +282,14 @@
       display: block;
     }
   }
+
+
+
+  //
+  // Карта
+  // --------------------------------------------------
+  .map {
+    margin-bottom: 90px;
+  }
+
 }

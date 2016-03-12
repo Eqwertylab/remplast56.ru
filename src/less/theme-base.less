@@ -121,7 +121,7 @@ h2,h3,h4 {
   }
   
   /* Заголовки */
-  h1 {
+  h1,.h1 {
     margin: 0 0 3.125rem;
     font-size: 3.25rem;
     font-weight: 700;
@@ -131,7 +131,7 @@ h2,h3,h4 {
   &_landing {
     padding-top: 4.0625rem;
     background: @content-bg;
-    h1 {
+    h1,.h1 {
       font-size: 2.625rem;
       font-weight: 500;
       margin: 0 0 2.0625rem;
@@ -443,6 +443,9 @@ ol.list-ol {
     }
     &:last-child > a {
       border-radius: 0 4px 4px 0;
+      &:after {
+        display: none;
+      }
     }
     &:hover > a {
       background: @navi-hover-bg;
@@ -605,12 +608,14 @@ ol.list-ol {
 //
 // Панель "Вызвать мастера"
 // --------------------------------------------------
+@pancall: .pancall;
 .pancall {
   background: #1f6dd3;
   color: #fff;
   padding: 15px;
   border-radius: 4px;
   position: relative;
+  margin-top: 35px;
   &__header {
     font-weight: 500;
     font-size: 1.625rem; 
@@ -622,10 +627,10 @@ ol.list-ol {
     left: 20px;
     bottom: 0;
     .size(236px, 219px);
-    background-position: center;
+    background-position: center bottom;
     background-repeat: no-repeat;
     background-image: url(../img/manfull.png);
-    background-size: 236px, 219px;
+    background-size: 236px 219px;
   }
   &__footer {
     margin-top: 15px;
@@ -637,12 +642,58 @@ ol.list-ol {
     font-weight: 500;
     text-transform: uppercase;
   }
+  &_small {
+    @{pancall}__logo {
+      width: 185px;
+      background-size: 185px auto;   
+      background-position: center bottom -15px;
+    }
+    @{pancall}__header {
+      font-size: 1.25rem;
+    }
+  }
+  &_landing {
+    margin-top: 0px;
+  }
 }
 
 
 
 //
-// Панель "Вызвать мастера"
+// Панель "Москитные сетки"
+// --------------------------------------------------
+.panmesh {
+  background: #65c126;
+  color: #fff;
+  padding: 15px;
+  border-radius: 4px;
+  position: relative;
+  margin-top: 85px;
+  &__body {
+    padding-right: 115px;
+  }
+  &__header {
+    font-weight: 500;
+    font-size: 1.625rem; 
+    margin-top: 0;
+  }
+  &__logo {
+    position: absolute;
+    display: block;
+    right: 10px;
+    top: -40px;
+    .size(114px, 193px);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url(../img/mesh-full.png);
+    background-size: 114px 193px;
+  }
+}
+
+
+
+//
+// О компании
 // --------------------------------------------------
 .introtext {
   margin-top: 48px;
@@ -938,7 +989,7 @@ ol.list-ol {
 .fwrap {
   padding: 7px;
   background: #edf0f4;
-  border: 1px solid #e4e8edi;
+  border: 1px solid #e4e8ed;
   border-radius: 4px;
   max-width: 390px;
   margin: 15px 0;
@@ -1032,6 +1083,43 @@ ol.list-ol {
 
 
 //
+// Контаты
+// --------------------------------------------------
+.contact {
+  &__box {
+    position: relative;
+    padding: 15px 0;
+    &:before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 15px;
+      right: 15px;
+      height: 1px;
+      background: #e8e8e8;
+    }
+  }
+  &__label {
+    font-weight: 500;
+  }
+}
+
+
+
+//
+// Карта
+// --------------------------------------------------
+.map {
+  height: 380px;
+  border: 8px solid #fff;
+  box-shadow: 0 5px 35px #e3e7ed;
+  margin-top: 35px;
+}
+
+
+
+//
 // Отзывы
 // --------------------------------------------------
 .review {
@@ -1090,25 +1178,6 @@ ol.list-ol {
     }
   }
 }
-
-
-
-@media (min-width: @screen-xsl-min)
-{ 
-  //
-  // Разработчики
-  // --------------------------------------------------
-  .develop {
-    text-align: right;
-    &__item {
-      display: inline-block;
-      text-align: left;
-      margin-left: 15px;
-      margin-top: 0px;
-    }
-  }
-}
-
 
 
 
@@ -1267,6 +1336,17 @@ only screen and (        min-device-pixel-ratio: 2) {
   .modal {
     &__logo {
       background-image: url(../img/logo@2x.png); 
+    }
+  }
+
+
+
+  //
+  // Панель "Москитные сетки"
+  // --------------------------------------------------
+  .panmesh {
+  &__logo {
+      background-image: url(../img/mesh-full@2x.png);
     }
   }
 
