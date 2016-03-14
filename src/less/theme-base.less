@@ -403,13 +403,19 @@ ol.list-ol {
     line-height: 1;
     white-space: nowrap;
   }
-  .active a {
-    #gradient > .vertical( @active-gr-color1, @active-gr-color2);
-    color: #ffffff;
-    &:hover,
-    &:focus,
-    &.focus {
+  .active {
+    > a {
       #gradient > .vertical( @active-gr-color1, @active-gr-color2);
+      color: #ffffff;
+      &:hover,
+      &:focus,
+      &.focus {
+        #gradient > .vertical( @active-gr-color1, @active-gr-color2);
+      }
+    } 
+    &:hover > a {
+      #gradient > .vertical( @active-gr-color1, @active-gr-color2);
+      color: #ffffff;
     }
   }
   > li {

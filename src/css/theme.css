@@ -396,7 +396,7 @@ ol.list-ol > li:before {
   line-height: 1;
   white-space: nowrap;
 }
-.menu .active a {
+.menu .active > a {
   background-image: -webkit-linear-gradient(top, #66c227 0%, #5eba1f 100%);
   background-image: -o-linear-gradient(top, #66c227 0%, #5eba1f 100%);
   background-image: linear-gradient(to bottom, #66c227 0%, #5eba1f 100%);
@@ -404,14 +404,22 @@ ol.list-ol > li:before {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff66c227', endColorstr='#ff5eba1f', GradientType=0);
   color: #ffffff;
 }
-.menu .active a:hover,
-.menu .active a:focus,
-.menu .active a.focus {
+.menu .active > a:hover,
+.menu .active > a:focus,
+.menu .active > a.focus {
   background-image: -webkit-linear-gradient(top, #66c227 0%, #5eba1f 100%);
   background-image: -o-linear-gradient(top, #66c227 0%, #5eba1f 100%);
   background-image: linear-gradient(to bottom, #66c227 0%, #5eba1f 100%);
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff66c227', endColorstr='#ff5eba1f', GradientType=0);
+}
+.menu .active:hover > a {
+  background-image: -webkit-linear-gradient(top, #66c227 0%, #5eba1f 100%);
+  background-image: -o-linear-gradient(top, #66c227 0%, #5eba1f 100%);
+  background-image: linear-gradient(to bottom, #66c227 0%, #5eba1f 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff66c227', endColorstr='#ff5eba1f', GradientType=0);
+  color: #ffffff;
 }
 .menu > li {
   display: table-cell;
