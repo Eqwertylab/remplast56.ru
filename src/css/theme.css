@@ -61,6 +61,7 @@ h4 {
 }
 .content p {
   line-height: 23px;
+  margin: 10.5px 0;
 }
 .content blockquote {
   text-align: center;
@@ -956,6 +957,9 @@ ol.list-ol > li:before {
   font-size: 14px;
   padding: 10px 0 0;
 }
+.modal .screen-reader-response {
+  display: none;
+}
 .fwrap {
   padding: 7px;
   background: #edf0f4;
@@ -980,6 +984,9 @@ ol.list-ol > li:before {
 .fwrap__desc {
   font-size: 14px;
   padding: 10px 0 0;
+}
+.fwrap .screen-reader-response {
+  display: none;
 }
 .form {
   margin-top: 20px;
@@ -1010,7 +1017,9 @@ textarea.form__control {
   font-size: 1rem;
   height: 100px;
 }
+.form .wpcf7-not-valid-tip,
 label.form__error {
+  display: inline-block;
   padding: 5px 15px;
   background: #ef0022;
   font-size: 14px;
@@ -1077,6 +1086,23 @@ label.form__error {
 .form_embed textarea.form__control,
 .form_embed input.form__control {
   border-bottom: 1px solid #bbbbbb;
+}
+.form .wpcf7-response-output {
+  padding: 5px 15px;
+  margin-bottom: 15px;
+  border: 2px solid #66C227;
+  border-radius: 4px;
+  text-align: left;
+  display: none;
+}
+.form .wpcf7-response-output.wpcf7-validation-errors {
+  display: none !important;
+}
+.form .wpcf7-response-output.wpcf7-mail-sent-ok {
+  display: block;
+}
+.form .ajax-loader {
+  display: none;
 }
 .contact__box {
   position: relative;
@@ -1160,6 +1186,9 @@ label.form__error {
   border-bottom-color: #fff;
   border-left-color: #fff;
   border-width: 7px;
+}
+.review__body p {
+  margin: 0;
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2) {
   .head {

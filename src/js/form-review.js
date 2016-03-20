@@ -4,16 +4,16 @@
 var form_review_validator = $("#form-review").validate({
 
   rules: {
-    fullname: "required",
-    review: {
+    author: "required",
+    comment: {
       required: true,
       minlength: 20
     }
   },
 
   messages: {
-    fullname: "Укажите ваше имя",
-    review: {
+    author: "Укажите ваше имя",
+    comment: {
       required: "Напишите текст отзыва",
       minlength: jQuery.validator.format("Минимальная длина {0} символов")
     }
@@ -21,11 +21,11 @@ var form_review_validator = $("#form-review").validate({
 
   errorClass: "form__error",
 
-  submitHandler: function(form) {
+  // submitHandler: function(form) {
 
-    $(form).ajaxSubmit(submit_review_options);
-    return false;
-  }
+  //   $(form).ajaxSubmit(submit_review_options);
+  //   return false;
+  // }
 });
 
 

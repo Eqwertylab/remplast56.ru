@@ -36,6 +36,7 @@
     "jquery-validation": "~1.14.0",
     "jquery-form": "~3.46.0",
     "template7": "~1.1.0",
-    "jQuery.mmenu": "mmenu#^5.6.1"
+    "jQuery.mmenu": "mmenu#^5.6.1",
+    "jquery.inputmask": "^3.2.7"
   }
 }

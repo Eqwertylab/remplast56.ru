@@ -4,28 +4,26 @@
 var form_order_validator = $("#form-order").validate({
 
   rules: {
-    fullname: "required",
     tel: {
-      required: true,
-      minlength: 6
+      required: true
     }
   },
 
   messages: {
-    fullname: "Укажите ваше имя",
     tel: {
-      required: "Напишите телефон чтобы менеджер смог согласовать дату",
-      minlength: jQuery.validator.format("Минимальная длина {0} символов")
+      required: "Напишите телефон чтобы менеджер смог согласовать дату"
     }
   },
 
   errorClass: "form__error",
 
+  /*
   submitHandler: function(form) {
-
     $(form).ajaxSubmit(submit_order_options);
+    $(form).submit();
     return false;
   }
+  */
 });
 
 

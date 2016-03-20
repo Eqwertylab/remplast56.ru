@@ -1,3 +1,3 @@
 $('#modal-order').on('shown.bs.modal', function () {
-  $(this).find('#fullname').focus()
+  $(this).find('#your-name').focus()
 })

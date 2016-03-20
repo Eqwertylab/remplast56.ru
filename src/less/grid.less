@@ -64,6 +64,13 @@
   .make-grid(xsl);
 }
 
+[class*="col-xsl-"] {
+  position: relative;
+  min-height: 1px;
+  padding-left:  ceil((@grid-gutter-width / 2));
+  padding-right: floor((@grid-gutter-width / 2));
+}
+
 
 
 // Small grid
