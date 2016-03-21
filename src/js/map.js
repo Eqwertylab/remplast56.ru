@@ -15,6 +15,7 @@ if(mapWrap) {
       DG.then(function() {
         map = DG.map('map', {
           center: [51.827427,55.158364],
+          scrollWheelZoom: false,
           zoom: 16
         });
 
