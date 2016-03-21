@@ -1083,6 +1083,9 @@ label.form__error {
 .form_embed .form__label {
   color: #949494;
 }
+.form_embed .form__label_active {
+  color: #000;
+}
 .form_embed textarea.form__control,
 .form_embed input.form__control {
   border-bottom: 1px solid #bbbbbb;
