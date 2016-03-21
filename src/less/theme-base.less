@@ -407,11 +407,13 @@ ol.list-ol {
     height: @navi-height;
     line-height: 1;
     white-space: nowrap;
+    text-shadow: 0 1px 0px #fff;
   }
   .active {
     > a {
       #gradient > .vertical( @active-gr-color1, @active-gr-color2);
       color: #ffffff;
+      text-shadow: none;
       &:hover,
       &:focus,
       &.focus {
@@ -464,8 +466,13 @@ ol.list-ol {
         display: block;
       }
     }
+    &:active > a {
+      background: @navi-active-bg;
+      + .menu__inner {
+        display: block;
+      }
+    }
   }
-
   &__inner {
     margin: 0;
     padding: 0;
@@ -476,10 +483,11 @@ ol.list-ol {
     background: @navi-hover-bg;
     border-radius: 0 0 4px 4px;
     > li {
-      > a {
-        &:hover {
-          background: darken(@navi-hover-bg, 5%);
-        }
+      &:hover > a {
+        background: darken(@navi-hover-bg, 5%);
+      }
+      &:active > a {
+        background: darken(@navi-active-bg, 5%);
       }
       &:last-child > a {
         border-radius: 0 0 4px 4px;

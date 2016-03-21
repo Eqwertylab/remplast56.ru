@@ -396,6 +396,7 @@ ol.list-ol > li:before {
   height: 36px;
   line-height: 1;
   white-space: nowrap;
+  text-shadow: 0 1px 0px #fff;
 }
 .menu .active > a {
   background-image: -webkit-linear-gradient(top, #66c227 0%, #5eba1f 100%);
@@ -404,6 +405,7 @@ ol.list-ol > li:before {
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff66c227', endColorstr='#ff5eba1f', GradientType=0);
   color: #ffffff;
+  text-shadow: none;
 }
 .menu .active > a:hover,
 .menu .active > a:focus,
@@ -461,6 +463,12 @@ ol.list-ol > li:before {
 .menu > li:hover > a + .menu__inner {
   display: block;
 }
+.menu > li:active > a {
+  background: #d3dae3;
+}
+.menu > li:active > a + .menu__inner {
+  display: block;
+}
 .menu__inner {
   margin: 0;
   padding: 0;
@@ -471,8 +479,11 @@ ol.list-ol > li:before {
   background: #e3e7ed;
   border-radius: 0 0 4px 4px;
 }
-.menu__inner > li > a:hover {
+.menu__inner > li:hover > a {
   background: #d3dae3;
+}
+.menu__inner > li:active > a {
+  background: #c4ccd9;
 }
 .menu__inner > li:last-child > a {
   border-radius: 0 0 4px 4px;
