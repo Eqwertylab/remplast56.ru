@@ -13,7 +13,9 @@
   // Заголовок
   // --------------------------------------------------
   .head {
-
+    &__logo {
+      background-image: url(../img/logo.png);
+    }
     /* Баннер на лендинге */
     &__slide {
       height: 515px;
@@ -21,6 +23,11 @@
     &__image {
       .size(788px, 484px);
       right: -200px;
+    }
+    &__title {
+      span {
+        max-width: 59%;
+      }
     }
   }
 
@@ -62,4 +69,24 @@
       height: 165px;
     }
   }
+
+
+
+  //
+  // Ретина стили
+  // --------------------------------------------------
+  @media
+  only screen and (-webkit-min-device-pixel-ratio: 2),
+  only screen and (   min--moz-device-pixel-ratio: 2),
+  only screen and (     -o-min-device-pixel-ratio: 2/1),
+  only screen and (        min-device-pixel-ratio: 2) { 
+    //
+    // Заголовок
+    // --------------------------------------------------
+    .head {
+      &__logo {
+        background-image: url(../img/logo@2x.png);
+      }
+    }
+  } // <--- END Ретина стили
 }

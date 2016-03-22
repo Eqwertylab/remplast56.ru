@@ -175,8 +175,8 @@ ol.list-ol > li:before {
   display: block;
   width: 8.875rem;
   height: 3.0625rem;
-  background-image: url(../img/logo.png);
-  background-size: 8.875rem 3.0625rem;
+  background-image: url(../img/logo-mobile.png);
+  background-size: 8.875rem auto;
   background-repeat: no-repeat;
 }
 .head__tel {
@@ -268,7 +268,7 @@ ol.list-ol > li:before {
   z-index: 1;
 }
 .head__slide {
-  margin-bottom: -8px;
+  margin: 0 0 -8px;
   height: 275px;
   position: relative;
   z-index: 1;
@@ -290,14 +290,14 @@ ol.list-ol > li:before {
 .head__image {
   position: absolute;
   z-index: 1;
-  left: 0;
+  left: -7%;
+  right: -7%;
   bottom: 0;
-  right: 0;
   height: 150px;
   background-image: url(../img/window.png);
   background-position: center top;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 535px auto;
 }
 .navi {
   margin-top: 24px;
@@ -746,13 +746,14 @@ ol.list-ol > li:before {
   flex-wrap: wrap;
 }
 .features__item {
-  background: #eff1f5;
+  background: #f4f6f8;
   list-style-type: none;
   display: inline-block;
   padding: 20px 25px;
   vertical-align: top;
   margin-right: 30px;
   margin-bottom: 20px;
+  border-radius: 4px;
 }
 .features big {
   font-size: 2.125rem;
@@ -890,16 +891,23 @@ ol.list-ol > li:before {
 }
 .copyright {
   margin-top: 15px;
-  padding-left: 26px;
-  background-image: url(../img/copy.png);
   background-repeat: no-repeat;
   background-size: 22px 20px;
   background-position: 0 0;
+  line-height: 1.15;
+}
+.copyright:before {
+  content: "\00A9";
+  font-size: 24px;
+  font-weight: 500;
+  vertical-align: -2px;
 }
 .copyright__date {
   font-size: 1.25rem;
   font-weight: 700;
   line-height: 1;
+  display: inline-block;
+  padding-left: 22px;
 }
 .modal {
   padding: 0 15px;
@@ -953,7 +961,7 @@ ol.list-ol > li:before {
   background-repeat: no-repeat;
   background-size: auto 36px;
   background-position: left top;
-  background-image: url(../img/logo.png);
+  background-image: url(../img/logo-mobile@2x.png);
   margin-bottom: 1.5625rem;
   display: none;
 }
@@ -1274,9 +1282,6 @@ label.form__error {
   .ftel__num {
     background-image: url(../img/telfooter@2x.png);
   }
-  .copyright {
-    background-image: url(../img/copy@2x.png);
-  }
   .modal__logo {
     background-image: url(../img/logo@2x.png);
   }
@@ -1373,7 +1378,7 @@ label.form__error {
     padding-top: 0;
   }
   .head__title span {
-    max-width: 61%;
+    max-width: 65%;
   }
   .head__image {
     left: auto;
@@ -1381,6 +1386,7 @@ label.form__error {
     margin-left: 0px;
     width: 725px;
     height: 445px;
+    background-size: contain;
   }
   .navi__row {
     float: none;
@@ -1519,6 +1525,9 @@ label.form__error {
   .head {
     /* Баннер на лендинге */
   }
+  .head__logo {
+    background-image: url(../img/logo.png);
+  }
   .head__slide {
     height: 515px;
   }
@@ -1526,6 +1535,9 @@ label.form__error {
     width: 788px;
     height: 484px;
     right: -200px;
+  }
+  .head__title span {
+    max-width: 59%;
   }
   .search__form {
     right: -20px;
@@ -1543,6 +1555,11 @@ label.form__error {
   .panmesh__logo {
     right: 20px;
     height: 165px;
+  }
+}
+@media (min-width: 992px) and only screen and (-webkit-min-device-pixel-ratio: 2), (min-width: 992px) and only screen and (min--moz-device-pixel-ratio: 2), (min-width: 992px) and only screen and (-o-min-device-pixel-ratio: 2/1), (min-width: 992px) and only screen and (min-device-pixel-ratio: 2) {
+  .head__logo {
+    background-image: url(../img/logo@2x.png);
   }
 }
 @media (min-width: 1200px) {
@@ -1575,6 +1592,12 @@ label.form__error {
 @media (min-width: 1500px) {
   .head {
     /* Баннер на лендинге */
+  }
+  .head__title {
+    font-size: 5rem;
+  }
+  .head__title span {
+    max-width: 76%;
   }
   .head__image {
     right: -12px;
