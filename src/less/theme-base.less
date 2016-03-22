@@ -450,6 +450,12 @@ ol.list-ol {
         background-image: url(../img/delim.png);
         background-repeat: no-repeat;
       }
+      &:hover {
+        background: @navi-hover-bg;
+      }
+      &:active {
+        background: @navi-active-bg;
+      }
     }
     &:first-child > a {
       border-radius: 4px 0 0 4px;
@@ -460,15 +466,9 @@ ol.list-ol {
         display: none;
       }
     }
-    &:hover > a {
-      background: @navi-hover-bg;
-      + .menu__inner {
-        display: block;
-      }
-    }
-    &:active > a {
-      background: @navi-active-bg;
-      + .menu__inner {
+    &:active,
+    &:hover {
+      > .menu__inner {
         display: block;
       }
     }

@@ -448,6 +448,12 @@ ol.list-ol > li:before {
   background-image: url(../img/delim.png);
   background-repeat: no-repeat;
 }
+.menu > li > a:hover {
+  background: #e3e7ed;
+}
+.menu > li > a:active {
+  background: #d3dae3;
+}
 .menu > li:first-child > a {
   border-radius: 4px 0 0 4px;
 }
@@ -457,16 +463,8 @@ ol.list-ol > li:before {
 .menu > li:last-child > a:after {
   display: none;
 }
-.menu > li:hover > a {
-  background: #e3e7ed;
-}
-.menu > li:hover > a + .menu__inner {
-  display: block;
-}
-.menu > li:active > a {
-  background: #d3dae3;
-}
-.menu > li:active > a + .menu__inner {
+.menu > li:active > .menu__inner,
+.menu > li:hover > .menu__inner {
   display: block;
 }
 .menu__inner {

@@ -1,6 +1,8 @@
 $(document).ready(function() {
   $("#mmenu").mmenu({
-     // options
+    navbar: {
+      title: "Меню"
+    }
   }, {
      // configuration
      offCanvas: {
