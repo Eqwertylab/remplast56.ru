@@ -705,6 +705,7 @@ ol.list-ol > li:before {
 }
 .pancall_small .pancall__logo {
   width: 185px;
+  height: 165px;
   background-size: 185px auto;
   background-position: center bottom -15px;
 }
