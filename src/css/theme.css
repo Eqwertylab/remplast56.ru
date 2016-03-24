@@ -112,8 +112,7 @@ h4 {
   padding-top: 4.0625rem;
   background: #e5e9ee;
 }
-.content_landing h1,
-.content_landing .h1 {
+.content_landing h2 {
   font-size: 2.625rem;
   font-weight: 500;
   margin: 0 0 2.0625rem;
@@ -280,7 +279,6 @@ ol.list-ol > li:before {
 }
 .head__slide {
   margin: 0 0 -8px;
-  height: 275px;
   position: relative;
   z-index: 1;
   white-space: nowrap;
@@ -288,7 +286,7 @@ ol.list-ol > li:before {
 .head__title {
   position: relative;
   z-index: 2;
-  font-size: 2.25rem;
+  font-size: 2.9rem;
   font-weight: 700;
   line-height: 1.1;
   padding-top: 25px;
@@ -299,11 +297,9 @@ ol.list-ol > li:before {
   display: block;
 }
 .head__image {
-  position: absolute;
+  position: relative;
   z-index: 1;
-  left: -7%;
-  right: -7%;
-  bottom: 0;
+  margin: 15px -7% 0;
   height: 150px;
   background-image: url(../img/window.png);
   background-position: center top;
@@ -438,9 +434,9 @@ ol.list-ol > li:before {
 .menu > li {
   display: table-cell;
 }
-.menu > li:hover > a:after,
 .menu > li.active > a:after {
-  display: none;
+  width: 1px;
+  height: 21px;
 }
 .menu > li > a {
   text-transform: uppercase;
@@ -458,9 +454,14 @@ ol.list-ol > li:before {
   height: 21px;
   background-image: url(../img/delim.png);
   background-repeat: no-repeat;
+  background-position: right top;
 }
 .menu > li > a:hover {
   background: #e3e7ed;
+}
+.menu > li > a:hover:after {
+  width: 1px;
+  height: 21px;
 }
 .menu > li > a:active {
   background: #d3dae3;
@@ -1303,6 +1304,9 @@ label.form__error {
   .head {
     /* Баннер на лендинге */
   }
+  .head__title {
+    font-size: 3.5rem;
+  }
   .develop {
     text-align: right;
   }
@@ -1388,12 +1392,15 @@ label.form__error {
     padding-top: 0;
   }
   .head__title span {
-    max-width: 65%;
+    max-width: 69%;
   }
   .head__image {
+    position: absolute;
     left: auto;
     right: -250px;
+    bottom: 0;
     margin-left: 0px;
+    margin-top: 0;
     width: 725px;
     height: 445px;
     background-size: contain;
@@ -1546,8 +1553,11 @@ label.form__error {
     height: 484px;
     right: -200px;
   }
+  .head__title {
+    font-size: 4rem;
+  }
   .head__title span {
-    max-width: 59%;
+    max-width: 70%;
   }
   .search__form {
     right: -20px;

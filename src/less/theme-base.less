@@ -151,7 +151,7 @@ h2,h3,h4 {
   &_landing {
     padding-top: 4.0625rem;
     background: @content-bg;
-    h1,.h1 {
+    h2 {
       font-size: 2.625rem;
       font-weight: 500;
       margin: 0 0 2.0625rem;
@@ -301,7 +301,6 @@ ol.list-ol {
   /* Баннер на лендинге */
   &__slide {
     margin: 0 0 -8px;  
-    height: 275px;
     position:relative;  
     z-index: 1;
     white-space: nowrap;
@@ -309,7 +308,7 @@ ol.list-ol {
   &__title {
     position: relative;
     z-index: 2;
-    font-size: 2.25rem;
+    font-size: 2.9rem;
     font-weight: 700;
     line-height: 1.1;
     padding-top: 25px; 
@@ -320,11 +319,9 @@ ol.list-ol {
     }
   }
   &__image {
-    position: absolute;
+    position: relative;
     z-index: 1;
-    left: -7%;
-    right: -7%;
-    bottom: 0; 
+    margin: 15px -7% 0; 
     height: 150px;
     background-image: url(../img/window.png);
     background-position: center top;
@@ -442,11 +439,10 @@ ol.list-ol {
   }
   > li {
     display: table-cell;
-    &:hover,
     &.active {
       > a {
         &:after {
-          display: none;
+          .size(1px, 21px);
         }
       }
     }
@@ -464,9 +460,13 @@ ol.list-ol {
         .size(2px, 21px);
         background-image: url(../img/delim.png);
         background-repeat: no-repeat;
+        background-position: right top;
       }
       &:hover {
         background: @navi-hover-bg;
+        &:after {
+          .size(1px, 21px);
+        }
       }
       &:active {
         background: @navi-active-bg;
