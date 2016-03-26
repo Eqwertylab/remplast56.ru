@@ -21,6 +21,9 @@
     padding-top: 40px;
     &__logo {
       float: left;
+      .size(142px, 49px);
+      background-size: 142px 49px;
+      background-image: url(../img/logo.png);
     }
     &__info {
       float: right;
@@ -70,10 +73,10 @@
     &__title {
       display: inline-block;
       vertical-align: middle;
-      font-size: 3.5rem;
+      font-size: 45px;
       padding-top: 0;
       span {
-        max-width: 69%;
+        width: 470px;
       }
     }
     &__image {
@@ -81,10 +84,11 @@
       left: auto;
       right: -250px;
       bottom: 0;
-      margin-left: 0px;
-      margin-top: 0;
-      .size(725px, 445px);
-      background-size: contain;
+      margin: 0;
+      @header-image-width: image-width('../img/window.png');
+      .size(@header-image-width, 445px);
+      background-size: @header-image-width  auto;
+      
     }
   }
 
@@ -117,19 +121,26 @@
   .search {
     &__form {
       display: none;
+      // visibility: hidden;
       position: absolute;
       width: 450px;
+      // width: 44px;
       right: 15px;
-      top: -50%;
+      top: -30%;
     }
     &_active {
       .search__form {
         display: block;
+        // visibility: visible;
         box-shadow: 0 -2px 30px rgba(39,62,160,0.65);
         border-radius: 4px;
       }
-      .search__toggle .search__icon {
-        visibility: hidden;
+      .search__toggle {
+        padding: 11px 16px;
+        margin-left: -8px;
+        .search__icon {
+          visibility: hidden;
+        }
       }
     }
   }

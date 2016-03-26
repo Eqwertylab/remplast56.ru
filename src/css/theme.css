@@ -42,10 +42,22 @@ h4 {
   list-style-type: none;
 }
 .works__meta {
-  color: #717171;
+  display: inline-block;
+  color: #787878;
+  font-style: italic;
 }
-.works__meta span {
-  color: #000;
+.mmenu {
+  display: none;
+}
+.mm-menu {
+  background: #e3e7ed;
+}
+.mm-menu .mm-listview > li > a {
+  font-weight: 500;
+  color: #274ca0;
+}
+.mm-menu .mm-navbar {
+  borde-color: rgba(0, 0, 0, 0.1);
 }
 .content {
   padding-top: 3.125rem;
@@ -122,6 +134,7 @@ h4 {
   max-width: 100%;
   height: auto;
   margin: 15px 0;
+  border-radius: 4px;
 }
 .content table {
   border-collapse: collapse;
@@ -183,10 +196,10 @@ ol.list-ol > li:before {
 }
 .head__logo {
   display: block;
-  width: 8.875rem;
-  height: 3.0625rem;
+  width: 116px;
+  height: 41px;
   background-image: url(../img/logo-mobile.png);
-  background-size: 8.875rem auto;
+  background-size: 116px 41px;
   background-repeat: no-repeat;
 }
 .head__tel {
@@ -300,11 +313,11 @@ ol.list-ol > li:before {
   position: relative;
   z-index: 1;
   margin: 15px -7% 0;
-  height: 150px;
+  height: 200px;
   background-image: url(../img/window.png);
   background-position: center top;
   background-repeat: no-repeat;
-  background-size: 535px auto;
+  background-size: 630.4px auto;
 }
 .navi {
   margin-top: 24px;
@@ -497,6 +510,11 @@ ol.list-ol > li:before {
 }
 .menu__inner > li:last-child > a {
   border-radius: 0 0 4px 4px;
+}
+.serrez__meta {
+  display: inline-block;
+  color: #787878;
+  font-style: italic;
 }
 .search {
   position: relative;
@@ -928,6 +946,8 @@ ol.list-ol > li:before {
   padding: 7px;
   background: #fff;
   border: 1px solid #e4e8ed;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 .modal__inner {
   background: #3448aa;
@@ -986,6 +1006,13 @@ ol.list-ol > li:before {
 .modal__desc {
   font-size: 14px;
   padding: 10px 0 0;
+}
+.modal-backdrop {
+  background-color: #ffffff;
+}
+.modal-backdrop.in {
+  opacity: 0.7;
+  filter: alpha(opacity=50);
 }
 .modal .screen-reader-response {
   display: none;
@@ -1187,7 +1214,7 @@ label.form__error {
   font-style: italic;
 }
 .review__body {
-  padding: 1.5rem;
+  padding: 1rem 1.5rem;
   border-radius: 4px;
   border: 2px solid #e4e8ed;
   margin: 20px 0 25px;
@@ -1341,6 +1368,10 @@ label.form__error {
   }
   .head__logo {
     float: left;
+    width: 142px;
+    height: 49px;
+    background-size: 142px 49px;
+    background-image: url(../img/logo.png);
   }
   .head__info {
     float: right;
@@ -1388,22 +1419,21 @@ label.form__error {
   .head__title {
     display: inline-block;
     vertical-align: middle;
-    font-size: 3.5rem;
+    font-size: 45px;
     padding-top: 0;
   }
   .head__title span {
-    max-width: 69%;
+    width: 470px;
   }
   .head__image {
     position: absolute;
     left: auto;
     right: -250px;
     bottom: 0;
-    margin-left: 0px;
-    margin-top: 0;
-    width: 725px;
+    margin: 0;
+    width: 788px;
     height: 445px;
-    background-size: contain;
+    background-size: 788px auto;
   }
   .navi__row {
     float: none;
@@ -1422,12 +1452,16 @@ label.form__error {
     position: absolute;
     width: 450px;
     right: 15px;
-    top: -50%;
+    top: -30%;
   }
   .search_active .search__form {
     display: block;
     box-shadow: 0 -2px 30px rgba(39, 62, 160, 0.65);
     border-radius: 4px;
+  }
+  .search_active .search__toggle {
+    padding: 11px 16px;
+    margin-left: -8px;
   }
   .search_active .search__toggle .search__icon {
     visibility: hidden;
@@ -1542,22 +1576,19 @@ label.form__error {
   .head {
     /* Баннер на лендинге */
   }
-  .head__logo {
-    background-image: url(../img/logo.png);
-  }
   .head__slide {
     height: 515px;
+  }
+  .head__title {
+    font-size: 52px;
+  }
+  .head__title span {
+    width: 540px;
   }
   .head__image {
     width: 788px;
     height: 484px;
     right: -200px;
-  }
-  .head__title {
-    font-size: 4rem;
-  }
-  .head__title span {
-    max-width: 70%;
   }
   .search__form {
     right: -20px;
@@ -1589,8 +1620,11 @@ label.form__error {
   .head {
     /* Баннер на лендинге */
   }
+  .head__title span {
+    width: 680px;
+  }
   .head__image {
-    right: -80px;
+    right: 0px;
   }
   .menu a {
     padding: 11px 33px;
@@ -1610,16 +1644,7 @@ label.form__error {
 }
 /* Максимальная ширина контейнера */
 @media (min-width: 1500px) {
-  .head {
-    /* Баннер на лендинге */
-  }
-  .head__title {
-    font-size: 5rem;
-  }
-  .head__title span {
-    max-width: 76%;
-  }
-  .head__image {
-    right: -12px;
+  .container-fluid {
+    padding: 0 4%;
   }
 }
