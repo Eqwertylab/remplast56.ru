@@ -148,6 +148,23 @@ h4 {
 .content table th {
   background: #edf0f4;
 }
+.content .table_num {
+  border-collapse: collapse;
+  counter-reset: schetchik;
+}
+.content .table_num tr.num {
+  counter-increment: schetchik;
+}
+.content .table_num tr:before {
+  padding: 6px 20px;
+  border: 1px solid #e4e8ed;
+}
+.content .table_num tr.num:before {
+  content: counter(schetchik);
+  display: table-cell;
+  vertical-align: middle;
+  color: #978777;
+}
 ul.list-ul > li {
   list-style-type: none;
   position: relative;

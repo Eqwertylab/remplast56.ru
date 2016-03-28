@@ -193,6 +193,23 @@ h2,h3,h4 {
       background: #edf0f4;
     }
   }
+  .table_num {
+    border-collapse: collapse;
+    counter-reset: schetchik;
+  }
+  .table_num tr.num {
+    counter-increment: schetchik;
+  }
+  .table_num tr:before {
+    padding: 6px 20px;
+    border: 1px solid #e4e8ed;
+  }
+  .table_num tr.num:before {
+    content: counter(schetchik);
+    display: table-cell;
+    vertical-align: middle;
+    color: #978777;
+  }
 }
 
 
