@@ -1469,8 +1469,11 @@ label.form__error {
   .navi__col_search {
     width: 40px;
   }
+  .search {
+    width: 40px;
+    height: 36px;
+  }
   .search__form {
-    visibility: hidden;
     position: absolute;
     width: 40px;
     top: 0;
@@ -1482,7 +1485,6 @@ label.form__error {
     padding: 11px 12px;
   }
   .search_active .search__form {
-    visibility: visible;
     width: 450px;
     box-shadow: 0 -2px 30px rgba(39, 62, 160, 0.65);
     border-radius: 4px;
@@ -1492,31 +1494,11 @@ label.form__error {
   .search_active .search__submit {
     padding: 11px 14px;
   }
-  .search_active .search__toggle {
-    padding: 11px 16px;
-    margin-left: -8px;
-  }
-  .search_active .search__toggle:hover,
-  .search_active .search__toggle:active,
-  .search_active .search__toggle:focus {
-    background-image: -webkit-linear-gradient(top, #ffffff 0%, #e3e7ed 100%);
-    background-image: -o-linear-gradient(top, #ffffff 0%, #e3e7ed 100%);
-    background-image: linear-gradient(to bottom, #ffffff 0%, #e3e7ed 100%);
-    background-repeat: repeat-x;
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffe3e7ed', GradientType=0);
-    cursor: default;
-  }
-  .search_active .search__toggle .search__icon {
-    opacity: 0;
-  }
   .search_animate-in .search__form {
     transition: top 0.25s ease, right 0.25s ease 0.25s, width 0.25s ease 0.25s, box-shadow 0.5s ease, visibility 0.5s;
   }
   .search_animate-in .search__submit {
     transition: padding 0.25s ease 0.25s;
-  }
-  .search_animate-in .search__toggle {
-    transition: padding 0.1s ease 0.25s, margin-left 0.1s ease 0.25s;
   }
   .search_animate-out .search__form {
     transition: width 0.25s ease, right 0.25s ease, top 0.25s ease 0.25s, box-shadow 0.5s ease, visibility 0.5s;
@@ -1527,9 +1509,6 @@ label.form__error {
   }
   .search_animate-out .search__submit {
     transition: padding 0.25s ease;
-  }
-  .search_animate-out .search__toggle {
-    transition: padding 0.1s ease 0.15s, margin-left 0.1s ease 0.15s;
   }
   .navi__row {
     float: none;

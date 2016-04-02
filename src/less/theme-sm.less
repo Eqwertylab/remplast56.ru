@@ -119,8 +119,8 @@
   // Форма поиска
   // --------------------------------------------------
   .search {
+    .size(40px,36px);
     &__form {
-      visibility: hidden;
       position: absolute;
       width: 40px;
       top: 0;
@@ -133,8 +133,7 @@
     }
 
     &_active {
-      .search__form {
-        visibility: visible;
+      .search__form {;
         width: 450px;
         box-shadow: 0 -2px 30px rgba(39,62,160,0.65);
         border-radius: 4px;
@@ -143,19 +142,6 @@
       }
       .search__submit {
         padding: 11px 14px;
-      }
-      .search__toggle {
-        padding: 11px 16px;
-        margin-left: -8px;
-        &:hover,
-        &:active,
-        &:focus {
-          #gradient > .vertical(@navi-grad-color1, @navi-grad-color2);
-          cursor: default;
-        }
-        .search__icon {
-          opacity: 0;
-        }
       }
     }
     &_animate-in {
@@ -168,10 +154,6 @@
       }
       .search__submit {
         transition: padding 0.25s ease 0.25s;
-      }
-      .search__toggle {
-        transition: padding     0.1s ease 0.25s,
-                    margin-left 0.1s ease 0.25s;
       }
     }
     &_animate-out {
@@ -188,10 +170,6 @@
       }
       .search__submit {
         transition: padding 0.25s ease;
-      }
-      .search__toggle {
-        transition: padding     0.1s ease 0.15s,
-                    margin-left 0.1s ease 0.15s;
       }
     }
   }
