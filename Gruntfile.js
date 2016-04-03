@@ -77,17 +77,6 @@ module.exports = function(grunt) {
         files: 'src/less/**/*.less',
         tasks: 'less'
       }
-    },
-
-    express: {
-      site: {
-        options: {
-          port: 9001,
-          hostname: 'localhost',
-          bases: ['.'],
-          livereload: true
-        }
-      }
     }
 
   });
@@ -99,7 +88,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-usemin');
-  grunt.loadNpmTasks('grunt-express');
 
   grunt.registerTask('build', [
     'less',
@@ -110,10 +98,4 @@ module.exports = function(grunt) {
     'uglify:generated',
     'usemin'
   ]);
-
-  grunt.registerTask('server', [
-    'express',
-    'watch'
-  ]);
-
 };
